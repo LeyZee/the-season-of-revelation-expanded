@@ -24,7 +24,7 @@ chantier est **construit en public** : chaque étape est dans le [journal](docs/
 | **Autour** | La terre de l'Atlas : relief modelé depuis ses altitudes, sols, forêts, rivières et côtes, raccordés en douceur au relief de Warhammer I. |
 | **Le Bois Rêveur** | Le reflet d'Athel Loren en miroir, dans une mer d'éther, au sud de la forêt. |
 | **Clés** | Carte `saison_expanded_map`, campagne `saison_expanded`, régions neuves `saison_…` ; jamais les clés de la bêta. |
-| **État** | En chantier : phase 2 (déclaration dans l'Assembly Kit). Voir le [PLAN](docs/fr/PLAN.md). |
+| **État** | En chantier, pas encore jouable : grille, régions, villes et minicarte faites ; terrain de l'extension en cours (relief, rivières, Bois Rêveur). Voir le [PLAN](docs/fr/PLAN.md). Les collaborations sont ouvertes : issues, pull requests, et le Discord indiqué par [bretonia.dev](https://bretonia.dev). |
 
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 

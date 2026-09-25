@@ -92,6 +92,24 @@ Audit : `05-journal\2026-09-25-audits\compatibilite-autres-mods.md`. Pour la bê
    lignes seulement au startpos ?) ;
 3. 686 fichiers de WH1 à des chemins de style CA : les ranger sous un dossier à nous (`fichiers_wh1`, chaîne, pack).
 
+## Extension future (idée de la communauté, notée avec l'accord de Charles, 25.09.2026, 20 h 20)
+
+- **Les Voûtes (The Vaults)** : un moddeur du Discord propose d'ajouter les Voûtes (pour y jouer Kemmler, déjà jouable
+  avec Krell). Conflit avec la bande du Bois Rêveur au sud (décision de Charles : miroir d'Athel Loren derrière le voile)
+  et avec la largeur de la grille à l'est : donc pas dans Expanded v1. Piste pour une extension suivante (grille agrandie
+  vers le sud-est, Atlas d'abord, sources), en réutilisant la chaîne d'Expanded (grille, régions, villes, raccords,
+  minicarte, connexité).
+  **Mise à jour 20 h 25 (Charles : Kemmler « devrait être plus au sud », « pas mal d'espace entre les montagnes et le
+  miroir »)** : la place existe DANS Expanded, sans agrandir la grille : l'est de la bande du sud (x ≈ 343 à 440,
+  y ≈ −224 à 0, éther vide), au sud de la pointe des Grises et au sud-est d'Athel Loren. Le voile serait raccourci à la
+  largeur du miroir, et les Voûtes rejoindraient les Grises par la terre ; le miroir garde son voile et ses portails.
+  Recherche sourcée demandée à la session « Extension » (géographie, lieux, Kemmler et le tombeau de Krell dans les
+  sources). Rien n'est construit avant l'accord de Charles sur ses résultats. Dans la Saison, Kemmler reste au Poste de
+  la Pierre Noire.
+  **DÉCISION DE CHARLES (20 h 30)** : les Voûtes ENTRENT dans Expanded et dans l'Atlas (site compris), et Kemmler y
+  part dans Expanded (« plus logique là qu'ailleurs »). La session « Extension » dessine et source ; la construction
+  déclare et construit avec la même chaîne (déclaration, CAIME, villes, connexité, relief, minicarte).
+
 ## Idées validées par Charles, à placer (sans urgence)
 
 - **Ruines de l'Empire** en décor non habité, dans les cols et sur le versant bretonnien des Montagnes Grises, « au loin » :

@@ -24,7 +24,7 @@ It is **built in public**: every step is logged in the [journal](docs/fr/JOURNAL
 | **Around** | New land from the Atlas: relief modelled from its heights, soils, forests, rivers and coasts, joined smoothly to Warhammer I's relief. |
 | **The Dreaming Wood** | A mirrored reflection of Athel Loren in a sea of aether, south of the forest. |
 | **Keys** | Map `saison_expanded_map`, campaign `saison_expanded`, new regions `saison_…`. The beta's keys are never reused. |
-| **Status** | Work in progress: phase 2 (declared in the Assembly Kit). See [PLAN](docs/fr/PLAN.md). |
+| **Status** | Work in progress, not playable yet: grid, regions, towns and minimap done; terrain of the extension under way (relief, rivers, the Dreaming Wood). See [PLAN](docs/fr/PLAN.md). Collaboration is open: issues, pull requests, and the Discord linked from [bretonia.dev](https://bretonia.dev). |
 
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 

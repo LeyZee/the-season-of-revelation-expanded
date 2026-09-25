@@ -73,12 +73,19 @@ def relief(px, graine, ky):
         pass
     a = A()
     a.px = px
-    alt = grand(cv2.GaussianBlur(g["alt"].astype(np.float32), (0, 0), 1.5))
-    mer = grand(g["mer"].astype(np.float32)) > 0.5
+    # îles comptées en mer dans extension_geo (altitude 0) mais terre dans les régions (Tor Martel, l'Île Silencieuse) :
+    # altitude de collines basses (leurs sols : collines boisées), pour qu'elles aient un relief
+    alt_src = np.where(r["terre"] & (g["alt"] <= 0.05), 2.2, g["alt"]).astype(np.float32)
+    alt = grand(cv2.GaussianBlur(alt_src, (0, 0), 1.5))
+    # 21 h 20 (Charles : « des soucis avec les îles des Hauts Elfes ») : la couche `mer` de extension_geo recouvrait encore
+    # Tor Martel et sa petite île (100 % sous l'eau) ; les cases de TERRE des régions (extension_regions, `terre`) priment
+    mer = grand((g["mer"] & ~r["terre"]).astype(np.float32)) > 0.5
     # v2 : piémonts larges (flou de 4 hex) ; la hauteur suit `alt`, pas le bord du masque
     mont = cv2.GaussianBlur(grand(g["montagne"].astype(np.float32)), (0, 0), a.px * 4.0)
     coll = cv2.GaussianBlur(grand(g["colline"].astype(np.float32)), (0, 0), a.px * 2.5)
-    alt = cv2.GaussianBlur(alt, (0, 0), a.px * 2.5)
+    # 21 h 15 (profil de l'est d'Expanded : les Grises de l'Atlas chutaient de 10 u sur 6 hex vers le Reikland) : altitude
+    # lissée sur 4 hex au lieu de 2,5, pour des piémonts à la pente des versants de WH1 (~0,6 u par hex)
+    alt = cv2.GaussianBlur(alt, (0, 0), a.px * 4.0)
     riv = grand((g["riv_ext"] | g["nous_riv"]).astype(np.float32), cv2.INTER_LINEAR) > 0.3
     px_hex = a.px
     # base (v3, 25.09.2026 17 h 30) : calée sur les hauteurs de WH1 dans la Saison jouable (relief_maillages, p10/p50/p90 ;
@@ -110,7 +117,11 @@ def relief(px, graine, ky):
     h = h - np.exp(-(d / 1.5) ** 2) * (0.3 + 2.0 * mont + 0.5 * coll)
     # mer : profondeur croissante loin des côtes (jusqu'à -1,5 u à 20 hex)
     dm = cv2.distanceTransform(mer.astype(np.uint8), cv2.DIST_L2, 5) / px_hex
-    h = np.where(mer, -0.05 - 1.45 * (1 - np.exp(-dm / 8)) + fbm * 0.05, np.maximum(h, 0.02))
+    # terre : montée douce depuis le rivage (21 h 25 : les îles de l'Atlas étaient à ras de l'eau) : au moins 0,15 u sur la
+    # côte, 0,6 u à ~3 hex dans les terres
+    dt = cv2.distanceTransform((~mer).astype(np.uint8), cv2.DIST_L2, 5) / px_hex
+    plancher = 0.15 + 0.45 * (1 - np.exp(-dt / 1.5))
+    h = np.where(mer, -0.05 - 1.45 * (1 - np.exp(-dm / 8)) + fbm * 0.05, np.maximum(h, plancher))
     h = h.astype(np.float32)
     return h, (g, r, grand, mont, riv, mer, LW, LH, px_hex)
 

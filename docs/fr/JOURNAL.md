@@ -107,3 +107,83 @@ Plan : `PLAN.md` ; principes et données de l'Atlas : `README.md`.
   −1,2, surface 0,02) où le reflet flotte comme une île. Aperçu : `captures-article\10-bois-reveur.jpg`. À faire : bords
   du voile adoucis et effets de brume (phase 3, objets d'effets), objets du reflet (arbres et décors de WH1, positions
   reflétées), habillage de Slaanesh (PLAN.md, idées).
+- **19 h (décisions de Charles)** : dans Expanded, **l'Atlas l'emporte sur WH1** ; la partie jouable de WH1 est
+  redessinée d'après l'Atlas (provinces, villes) ; coutures terre / mer réglées selon l'Atlas (terrain adapté dans
+  `projet_expanded.py` : l'Île Silencieuse levée, la Baie Moussille et Manaanspoort creusées) ; les 11 maîtres de départ
+  à trancher : recherche (équilibrage, lore, gameplay), 11 recommandations validées par Charles
+  (`decisions-maitres.json`). Publication du dépôt Expanded validée par Charles : public depuis 19 h 30
+  (github.com/LeyZee/the-season-of-revelation-expanded ; liste blanche, rien de dérivé de WH1).
+- **19 h 14 - 19 h 28** : PHASE 2 BIS, RÉGIONS DÉCLARÉES dans le kit depuis `expanded_declaration.json` (session
+  « Extension ») : 76 régions (32 neuves, 14 découpes, 11 mers, 18 du Bois Rêveur, 1 reprise), 21 provinces
+  (`saison_province_*`), 65 colonies ; couleurs de région écartées, stables d'une génération à l'autre. Deux
+  corrections dans la foulée : 9 clés renommées par l'Atlas (noms abandonnés : Thurin -> Barfleur…,
+  `outils\retirer_cles_renommees.py`) ; **Fort Solstice** : la province d'une région étant GLOBALE dans WH3, la région de
+  WH1 garde sa province (la bêta n'en voit rien) et Expanded prend une reprise à clé à nous,
+  `saison_glanborielle_fort_solstice`, capitale de Glanborielle. Sauvegardes : `db-backups\20260925-191420`, `-192132`,
+  `-192133`, `-192836`.
+- **19 h 30** : COUCHE DES RÉGIONS dans CAIME (`outils\regions_expanded.py`) : `sync-names` (136 régions : 122 terrestres,
+  14 maritimes), puis chaque hex reçoit sa région d'après les grilles de l'Atlas (découpes > régions neuves > mers >
+  reprise > régions de WH1 > Bois Rêveur > terres et mers sauvages ; les 405 cases de lacs en mer sauvage). Contrôles :
+  0 case sans région, 0 région sans case. Aperçu : `captures-article\11-regions-expanded.png`.
+- **19 h 45 - 20 h** : VILLES ET PASSAGE (`outils\villes_expanded.py`, `retouches_expanded.py`) : les 57 villes de WH1
+  recopiées (aucune coupée par une découpe), 64 villes neuves (au `hex_ville_expanded` de l'Atlas ; celles du Bois Rêveur
+  au reflet de leur modèle de WH1), 13 ports (hex de port rattachés à la région de la ville, comme dans WH1), poussées à
+  19 hex (16 en port) par `grow_town_slots.py` ; Bois Rêveur : sols et climats reflétés d'Athel Loren, éther en mer,
+  voile en montagne ; passage selon l'Atlas (régions neuves et mers franchissables, 5 ouvertures de cols = 65 hex, voile
+  fermé) ; climats de l'extension (`mtn_pass` en montagne, `brt_moorlands` ailleurs, comme la Saison) ; 30 infranchissables
+  isolés ouverts ; 8 hex de cols rattachés à leur région. Validation CAIME : restent 4 erreurs d'étalement « deux zones
+  dangereuses », dont 2 existent déjà dans la carte de la Saison, que le jeu compile (Chêne, Défilé de la Hache) ; les 2
+  neuves (Poste de la Pierre Noire, par l'ouverture du Sentier ; Ubersreik, sur sa rivière) sont de même nature : à
+  surveiller à la première compilation.
+- **20 h 10** : MINICARTE D'EXPANDED (`outils\lookup_expanded.py`) : trame hex -> pixels validée contre le lookup de CAIME
+  de la Saison (99,77 % d'accord) ; lookup 2240 × 3810 et quart, contours lissés comme la Saison (0,66 % des pixels),
+  palette de 136 couleurs (les 11 mers, déclarées en noir, recolorées dans le kit : `maj_couleurs_mers.py`) ; parchemin
+  de la session « Extension » (1120 × 1905, cadre exact). Contrôle : `images-carte\controle_regions.png`.
+- **20 h** : BORDURE DE WH1 REMPLACÉE PAR L'ATLAS (`projet_expanded.py`, `garde_wh1_hex`) : le terrain de WH1 n'est plus
+  gardé que sur sa partie jouable + 4 hex et là où l'Atlas n'a rien de neuf ; sur 25 898 hex de la bordure décorative,
+  sous des régions ou mers neuves, c'est le relief de l'Atlas, raccordé ; 270 objets de WH1 (falaises, montagnes posées)
+  retirés de cette bordure. Le cadre reste visible là où l'Atlas n'a que de la terre sauvage (est, sud) : à reprendre.
+- **20 h 15** : CONSEIL DE CHAOSROBIE (Discord, #showcase, 18 h 46) : le calcul des chemins du jeu se dérègle si une
+  partie de la carte n'est reliée à rien (les nœuds de téléportation ne comptent pas ; le Royaume du Chaos de CA s'en
+  sort sans colonies et avec une IA « sur rails »). Or le Bois Rêveur (18 colonies) était coupé du reste. DÉCISION DE
+  CHARLES : on garde les PORTAILS comme seule entrée, plus sa solution de The Old World (Rivière des Échos) : un FIL DE
+  RIVIÈRE CACHÉ d'un hex, sous le voile, de la Porte d'hiver (Tal Mora, Atylwyth) à son reflet (Tal Amere du Bois
+  Rêveur), colonne 376, rangées 192 à 316 (`retouches_expanded.py`, étape 5). Contrôle `outils\connexite_expanded.py` :
+  les 121 colonies sur une seule composante franchissable (le Camp des Orques de fer, enfermé dans les Irrana, a reçu un
+  passage de 3 hex). À vérifier au premier essai en jeu d'Expanded (ChaosRobie : « I believe »).
+- **20 h 20** : PLUS DE CADRE AUTOUR DE WH1 (`projet_expanded.py`) : le terrain de WH1 n'est gardé que sur ses 59 régions
+  (massifs infranchissables intérieurs compris) + 4 hex, soit 103 834 hex ; l'Atlas partout ailleurs, raccordé
+  (72 166 hex du cadre) ; 514 objets de la bordure retirés. Nord, est et ouest : plus de bord visible ; les Montagnes
+  Grises de l'Atlas enveloppent la carte. Reste : au sud-ouest, une baie de l'Atlas s'arrête net sur le bord ouest de WH1
+  (côte droite, `scratchpad\zoom_couture_so.png`) ; à reprendre avec la session « Extension », comme la couture du
+  nord-est. Idée de la communauté notée au PLAN : les Voûtes, pour une extension future.
+- **20 h 30** : DÉCISION DE CHARLES : les VOÛTES entrent dans Expanded (sud-est de la bande du sud, voile raccourci au
+  miroir) et Kemmler y part (sources lues avec le navigateur de Charles : Krinal, sa forteresse des Voûtes, WD 309 p. 61 ;
+  tombeau de Krell dans les Grises ; bataille des Cairns, Wood Elves 8e p. 32). Recherche et dessin : session « Extension ».
+- **21 h - 21 h 35** : RELIEF (`outils\ombrage_expanded.py`, `captures-article\12-relief-ombre.jpg`) : rebord de bord de
+  carte de WH1 retiré sur 8 hex (sauf ses terres franchissables) ; raccord à largeur proportionnelle à l'écart d'altitude
+  (pente ≤ 0,5 u par hex) ; piémonts de l'Atlas plus larges (altitude lissée sur 4 hex) ; le front des Grises vers le
+  Reikland reste raide (vraie falaise, ~0,9 u par hex). ÎLES DES HAUTS ELFES (Charles : « ça fait un peu bizarre ») :
+  Tor Martel et sa petite île étaient noyées à 100 % (couche `mer` de l'Atlas sur des régions terrestres, puis raccord
+  qui prolongeait la mer de WH1 jusqu'à elles) ; l'Île Silencieuse à moitié ; corrigé (terre des régions prioritaire,
+  pas de raccord terre de l'Atlas / mer de WH1, altitude de collines basses, montée douce depuis le rivage) ; une
+  fausse bande de terre dans la mer (rivage de la couture de la Baie Moussille qui relevait la mer) supprimée. Reste :
+  léger trait vertical sur l'Île Silencieuse, au bord du cadre.
+- **21 h 15** : page Workshop d'Expanded créée par la session « Extension » (id 3807968769, masquée ; pack de démonstration).
+- **21 h 50 - 22 h 15** : TRAITS DROITS DU RELIEF (`projet_expanded.py`) :
+  - Grises de l'ouest (rangée 532), texture fine de WH1 d'un côté, remplissage lisse de l'autre, le long du bord de la
+    zone gardée : le détail de WH1 (relief moins son flou sur 2 hex) est rendu au raccord, dans le cadre, hors du rebord,
+    et s'efface quand l'Atlas l'emporte. Reste un petit rectangle, présent dans WH1 lui-même : gardé.
+  - Mer près de l'Île Silencieuse : bande trop peu profonde le long du cadre, parce que le fond venait de la surface
+    prolongée de WH1 (−0,1). Désormais le fond de mer de WH1 est prolongé et fondu dans celui de l'Atlas ; le fond est
+    aussi lissé sur ±6 hex du bord du cadre, sous l'eau. Marche au bord ouest : 0,035 au plus (contre 0,36).
+  - Arête presque droite des Grises de l'est (rangées 528-535, hex 460-535) : c'est la vallée d'un col dessiné par
+    l'Atlas (altitude 3,3 entre des sommets à 7-8), rendue telle quelle (poids de l'Atlas = 1). Signalée à la session
+    « Extension ».
+  - Couture du sud-ouest : la baie et un lac de l'Atlas s'arrêtent sur le bord du cadre (colonne 119), donnée de
+    l'Atlas : demandé à la session « Extension ».
+  - Couture du nord-est : pas de marche (0,008 u), seulement une teinte de l'aperçu.
+  - Essayée puis retirée : une marge variable autour de WH1, sans effet sur l'arête de l'est.
+- **21 h 45** : VOÛTES, esquisse v2 de la session « Extension » (trois lieux dans la bande de montagnes au sud d'Athel
+  Loren : Krinal pour Kemmler et Krell, Karak Bhufdar, Karak Izor capitale) envoyée à Charles ; rien n'est touché avant
+  son accord.

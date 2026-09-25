@@ -107,13 +107,20 @@ def lot2(spec):
     a_tirer = [r for r in terrestres if r["cle_jeu"] not in kit_rgb]
     tirees = dict(zip((r["cle_jeu"] for r in a_tirer), couleurs_ecartees(len(a_tirer), prises)))
     rgbs = iter(kit_rgb.get(r["cle_jeu"]) or tirees[r["cle_jeu"]] for r in terrestres)
+    # mers : une couleur propre aussi (20 h 10 : l'image de correspondance distingue chaque région, mers comprises,
+    # comme chez CA ; déclarées d'abord en noir). Une mer déjà en couleur dans le kit la garde.
+    mers = [r for r in neuves if r["is_sea"]]
+    prises_mers = prises + list(tirees.values()) + [kit_rgb[r["cle_jeu"]] for r in terrestres if r["cle_jeu"] in kit_rgb]
+    a_tirer_m = [r for r in mers if kit_rgb.get(r["cle_jeu"], (0, 0, 0)) == (0, 0, 0)]
+    tirees_m = dict(zip((r["cle_jeu"] for r in a_tirer_m), couleurs_ecartees(len(a_tirer_m), prises_mers, graine=23)))
+    couleur_mer = {r["cle_jeu"]: tirees_m.get(r["cle_jeu"]) or kit_rgb[r["cle_jeu"]] for r in mers}
     climat_peuple = {"nain": "climate_mountain", "peau-verte": "climate_mountain", "elfe": "climate_magicforest",
                      "ruine elfe": "climate_magicforest"}
     for r in neuves:
         entree = {"key": r["cle_jeu"], "onscreen": r["nom_en"], "battle_name": r["nom_en"], "in_encyclopedia": 1,
                   "is_sea": int(r["is_sea"])}
         if r["is_sea"]:
-            entree["rgb"] = [0, 0, 0]
+            entree["rgb"] = list(couleur_mer[r["cle_jeu"]])
         else:
             entree["rgb"] = list(next(rgbs))
             if r.get("province_jeu"):
@@ -127,8 +134,8 @@ def lot2(spec):
     # contrôles : clés uniques, couleurs terrestres uniques, provinces citées déclarées
     cles = [r["key"] for r in spec["regions"]]
     assert len(cles) == len(set(cles)), "clé de région en double"
-    terre = [tuple(r["rgb"]) for r in spec["regions"] if not r.get("is_sea")]
-    assert len(terre) == len(set(terre)), "couleur de région en double"
+    toutes = [tuple(r["rgb"]) for r in spec["regions"]]
+    assert len(toutes) == len(set(toutes)), "couleur de région en double (mers comprises)"
     provs = {p["key"] for p in spec["provinces"]}
     orph = sorted({r["province"] for r in spec["regions"] if r.get("province") and r["province"] not in provs})
     print(f"  lot 2 : {len(neuves)} régions ({len(terrestres)} terrestres), {len(d['provinces_neuves'])} provinces ; "
