@@ -8,7 +8,8 @@
 </p>
 
 **La Saison de la Révélation : Expanded** agrandit la carte de la mini-campagne de Warhammer I à **toute la Bretonnie**.
-Au centre, la carte de Warhammer I reste identique à la dernière pierre. Autour, la terre de l'extension est dessinée
+La carte de Warhammer I en est le cœur : son relief, ses objets, ses arbres et ses eaux sont gardés, tandis que ses
+provinces sont redessinées d'après l'Atlas (villes nouvelles, trois raccords de côte). Autour, la terre de l'extension est dessinée
 d'après l'[Atlas de Bretonnie](https://bretonia.dev) : les duchés, les montagnes, les côtes et, loin au sud, le Bois Rêveur. Le
 chantier est **construit en public** : chaque étape est dans le [journal](docs/fr/JOURNAL.md).
 
@@ -19,7 +20,7 @@ chantier est **construit en public** : chaque étape est dans le [journal](docs/
 | | |
 |---|---|
 | **Grille** | 560 × 825 hex. La carte de Warhammer I est placée en (+120, +250), un décalage pair comme CAIME l'exige. |
-| **Au centre** | La Saison originale, intacte (relief, objets, arbres, eaux) ; elle reste la zone jouable pour l'instant. |
+| **Au centre** | Le terrain de Warhammer I gardé (relief, objets, arbres, eaux) ; les provinces et trois raccords de côte suivent l'Atlas. Elle reste la zone jouable pour l'instant. |
 | **Autour** | La terre de l'Atlas : relief modelé depuis ses altitudes, sols, forêts, rivières et côtes, raccordés en douceur au relief de Warhammer I. |
 | **Le Bois Rêveur** | Le reflet d'Athel Loren en miroir, dans une mer d'éther, au sud de la forêt. |
 | **Clés** | Carte `saison_expanded_map`, campagne `saison_expanded`, régions neuves `saison_…` ; jamais les clés de la bêta. |

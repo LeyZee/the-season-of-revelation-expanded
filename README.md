@@ -8,7 +8,8 @@
 </p>
 
 **The Season of Revelation: Expanded** grows Warhammer I's mini-campaign map into **all of Bretonnia**. Warhammer I's
-map stays at the centre, identical to the last stone. Around it, the land of the extension is drawn from the
+map is the heart of it: its relief, props, trees and water are kept, while its provinces are redrawn after the Atlas
+(new towns, three coastline seams). Around it, the land of the extension is drawn from the
 [Atlas of Bretonnia](https://bretonia.dev): the dukedoms, the mountains, the coasts, and, far to the south, the Dreaming Wood.
 It is **built in public**: every step is logged in the [journal](docs/fr/JOURNAL.md).
 
@@ -19,7 +20,7 @@ It is **built in public**: every step is logged in the [journal](docs/fr/JOURNAL
 | | |
 |---|---|
 | **Grid** | 560 × 825 hexes. Warhammer I's map is placed at (+120, +250), and the offset is even, as CAIME requires. |
-| **Centre** | The original Season map, untouched (relief, props, trees, water). It stays the playable area for now. |
+| **Centre** | Warhammer I's terrain kept (relief, props, trees, water); provinces and three coastline seams follow the Atlas. It stays the playable area for now. |
 | **Around** | New land from the Atlas: relief modelled from its heights, soils, forests, rivers and coasts, joined smoothly to Warhammer I's relief. |
 | **The Dreaming Wood** | A mirrored reflection of Athel Loren in a sea of aether, south of the forest. |
 | **Keys** | Map `saison_expanded_map`, campaign `saison_expanded`, new regions `saison_…`. The beta's keys are never reused. |
