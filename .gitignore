@@ -1,0 +1,17 @@
+# machine settings (never shared)
+atelier_local.json
+# Python
+__pycache__/
+*.pyc
+# game files and dumps: never in this repository
+*.pack
+*.esf
+*.mdmp
+*.dds
+*.rigid_model_v2
+*.wsmodel
+# workshop folders that hold Warhammer I extractions or local evidence
+03-references/
+05-journal/
+99-archives/
+.depot-genere

@@ -1,0 +1,2563 @@
+{
+ "_commentaire": "Fiche générée par 04-projets/saison-expanded/outils/spec_expanded.py depuis la fiche de la Saison. Régions de WH1 partagées (clés wh_dlc05_), carte, campagne, zone et routes à nous.",
+ "map": {
+  "name": "saison_expanded_map",
+  "minx": 0,
+  "miny": 0,
+  "maxx": 560,
+  "maxy": 825,
+  "game_expansion_key": "warhammer3"
+ },
+ "campaign": {
+  "name": "saison_expanded",
+  "onscreen": "The Season of Revelation: Expanded",
+  "description": "Bretonnia, from the Grey Mountains to the Sea of Claws",
+  "available_for_mp": 0,
+  "script_path": "script/campaign/saison_expanded",
+  "mask": "32"
+ },
+ "provinces": [
+  {
+   "key": "wh_dlc05_anmyr",
+   "onscreen": "Anmyr"
+  },
+  {
+   "key": "wh_dlc05_aquitaine",
+   "onscreen": "Duchy of Aquitaine"
+  },
+  {
+   "key": "wh_dlc05_argwylon",
+   "onscreen": "Argwylon"
+  },
+  {
+   "key": "wh_dlc05_arranoc",
+   "onscreen": "Arranoc"
+  },
+  {
+   "key": "wh_dlc05_atylwyth",
+   "onscreen": "Atylwyth"
+  },
+  {
+   "key": "wh_dlc05_bastonne",
+   "onscreen": "Duchy of Bastonne"
+  },
+  {
+   "key": "wh_dlc05_bordeleaux",
+   "onscreen": "Duchy of Bordeleaux"
+  },
+  {
+   "key": "wh_dlc05_brionne",
+   "onscreen": "Duchy of Brionne"
+  },
+  {
+   "key": "wh_dlc05_carcassonne",
+   "onscreen": "Duchy of Carcassonne"
+  },
+  {
+   "key": "wh_dlc05_cavaroc",
+   "onscreen": "Cavaroc"
+  },
+  {
+   "key": "wh_dlc05_cythral",
+   "onscreen": "Cythral"
+  },
+  {
+   "key": "wh_dlc05_fyr_darric",
+   "onscreen": "Fyr Darric"
+  },
+  {
+   "key": "wh_dlc05_gisoreux",
+   "onscreen": "Duchy of Gisoreux"
+  },
+  {
+   "key": "wh_dlc05_grey_mountains",
+   "onscreen": "Axe Bite Pass"
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_2",
+   "onscreen": "Grey Mountains"
+  },
+  {
+   "key": "wh_dlc05_massif_orcal",
+   "onscreen": "Massif Orcal"
+  },
+  {
+   "key": "wh_dlc05_modryn",
+   "onscreen": "Modryn"
+  },
+  {
+   "key": "wh_dlc05_montfort",
+   "onscreen": "Duchy of Montfort"
+  },
+  {
+   "key": "wh_dlc05_mousillon",
+   "onscreen": "Mousillon"
+  },
+  {
+   "key": "wh_dlc05_oak_of_ages",
+   "onscreen": "Yn Edri Eternos"
+  },
+  {
+   "key": "wh_dlc05_parravon",
+   "onscreen": "Duchy of Parravon"
+  },
+  {
+   "key": "wh_dlc05_quenelles",
+   "onscreen": "Duchy of Quenelles"
+  },
+  {
+   "key": "wh_dlc05_talsyn",
+   "onscreen": "Talsyn"
+  },
+  {
+   "key": "wh_dlc05_tirsyth",
+   "onscreen": "Tirsyth"
+  },
+  {
+   "key": "wh_dlc05_torgovann",
+   "onscreen": "Torgovann"
+  },
+  {
+   "key": "wh_dlc05_wydrioth",
+   "onscreen": "Wydrioth"
+  },
+  {
+   "key": "saison_province_lyonesse",
+   "onscreen": "Duchy of Lyonesse"
+  },
+  {
+   "key": "saison_province_languille",
+   "onscreen": "Duchy of L'Anguille"
+  },
+  {
+   "key": "saison_province_couronne",
+   "onscreen": "Duchy of Couronne"
+  },
+  {
+   "key": "saison_province_marches",
+   "onscreen": "Marches of Couronne"
+  },
+  {
+   "key": "saison_province_artois",
+   "onscreen": "Duchy of Artois"
+  },
+  {
+   "key": "saison_province_soeurs_pales",
+   "onscreen": "The Pale Sisters"
+  },
+  {
+   "key": "saison_province_tor_soleil",
+   "onscreen": "Tor Soleil"
+  },
+  {
+   "key": "saison_province_tor_martel",
+   "onscreen": "Tor Martel Isles"
+  },
+  {
+   "key": "saison_province_ile_silencieuse",
+   "onscreen": "The Silent Isle"
+  },
+  {
+   "key": "saison_province_reikland",
+   "onscreen": "Reikland"
+  },
+  {
+   "key": "saison_province_irrana",
+   "onscreen": "Irrana Mountains"
+  },
+  {
+   "key": "saison_province_dame_grise",
+   "onscreen": "Grey Lady Pass"
+  },
+  {
+   "key": "saison_province_grises_sud",
+   "onscreen": "Southern Grey Mountains"
+  },
+  {
+   "key": "saison_province_glanborielle",
+   "onscreen": "Glanborielle"
+  },
+  {
+   "key": "saison_province_pre_de_ceren",
+   "onscreen": "Ceren Field"
+  },
+  {
+   "key": "saison_province_reves_ete",
+   "onscreen": "Reflection of Arranoc"
+  },
+  {
+   "key": "saison_province_reves_hiver",
+   "onscreen": "Reflection of Atylwyth"
+  },
+  {
+   "key": "saison_province_reves_ouest",
+   "onscreen": "Reflection of Modryn"
+  },
+  {
+   "key": "saison_province_reves_nord_ouest",
+   "onscreen": "Reflection of Anmyr"
+  },
+  {
+   "key": "saison_province_reves_est",
+   "onscreen": "Reflection of Wydrioth"
+  },
+  {
+   "key": "saison_province_reves_coeur",
+   "onscreen": "Reflection of the Oak of Ages"
+  }
+ ],
+ "regions": [
+  {
+   "key": "wh_dlc05_anmyr_halls_of_anaereth",
+   "onscreen": "Halls of Anaereth",
+   "battle_name": "Halls of Anaereth",
+   "in_encyclopedia": 1,
+   "rgb": [
+    170,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_anmyr",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_anmyr_tal_rond",
+   "onscreen": "Tal Rond",
+   "battle_name": "Tal Rond",
+   "in_encyclopedia": 1,
+   "rgb": [
+    170,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_anmyr",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_aquitaine_chateau_depee",
+   "onscreen": "Chateau D'Epee",
+   "battle_name": "Chateau D'Epee",
+   "in_encyclopedia": 1,
+   "rgb": [
+    100,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_aquitaine",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_aquitaine_derrevin_libre",
+   "onscreen": "Derrevin Libre",
+   "battle_name": "Derrevin Libre",
+   "in_encyclopedia": 1,
+   "rgb": [
+    100,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_aquitaine",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_aquitaine_gien",
+   "onscreen": "Gien",
+   "battle_name": "Gien",
+   "in_encyclopedia": 1,
+   "rgb": [
+    100,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_aquitaine",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_argwylon_waterfall_palace",
+   "onscreen": "Waterfall Palace",
+   "battle_name": "Waterfall Palace",
+   "in_encyclopedia": 1,
+   "rgb": [
+    180,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_argwylon",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_arranoc_tal_esth",
+   "onscreen": "Tal Esth",
+   "battle_name": "Tal Esth",
+   "in_encyclopedia": 1,
+   "rgb": [
+    190,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_arranoc",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_atylwyth_tal_amere",
+   "onscreen": "Tal Amere",
+   "battle_name": "Tal Amere",
+   "in_encyclopedia": 1,
+   "rgb": [
+    40,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_atylwyth",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_bastonne_castle_bastonne",
+   "onscreen": "Castle Bastonne",
+   "battle_name": "Castle Bastonne",
+   "in_encyclopedia": 1,
+   "rgb": [
+    70,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_bastonne",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_bastonne_humble_chapel",
+   "onscreen": "The Humble Chapel",
+   "battle_name": "The Humble Chapel",
+   "in_encyclopedia": 1,
+   "rgb": [
+    70,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_bastonne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_bastonne_soude",
+   "onscreen": "Soude",
+   "battle_name": "Soude",
+   "in_encyclopedia": 1,
+   "rgb": [
+    70,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_bastonne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_bordeleaux_bordeleaux",
+   "onscreen": "Bordeleaux",
+   "battle_name": "Bordeleaux",
+   "in_encyclopedia": 1,
+   "rgb": [
+    128,
+    128,
+    128
+   ],
+   "province": "wh_dlc05_bordeleaux",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_bordeleaux_turris_vigilans",
+   "onscreen": "Turris Vigilans",
+   "battle_name": "Turris Vigilans",
+   "in_encyclopedia": 1,
+   "rgb": [
+    90,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_bordeleaux",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_brionne_brionne",
+   "onscreen": "Brionne",
+   "battle_name": "Brionne",
+   "in_encyclopedia": 1,
+   "rgb": [
+    140,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_brionne",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_brionne_castle_gransette",
+   "onscreen": "Castle Gransette",
+   "battle_name": "Castle Gransette",
+   "in_encyclopedia": 1,
+   "rgb": [
+    140,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_brionne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_brionne_muret",
+   "onscreen": "Muret",
+   "battle_name": "Muret",
+   "in_encyclopedia": 1,
+   "rgb": [
+    140,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_brionne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_carcassonne_castle_carcassonne",
+   "onscreen": "Castle Carcassonne",
+   "battle_name": "Castle Carcassonne",
+   "in_encyclopedia": 1,
+   "rgb": [
+    150,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_carcassonne",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_carcassonne_ferignac",
+   "onscreen": "Ferignac",
+   "battle_name": "Ferignac",
+   "in_encyclopedia": 1,
+   "rgb": [
+    150,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_carcassonne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_carcassonne_st_jacques",
+   "onscreen": "St Jacques",
+   "battle_name": "St. Jacques",
+   "in_encyclopedia": 1,
+   "rgb": [
+    150,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_carcassonne",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_cavaroc_halls_of_equos",
+   "onscreen": "Halls of Equos",
+   "battle_name": "Halls of Equos",
+   "in_encyclopedia": 1,
+   "rgb": [
+    250,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_cavaroc",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_cythral_tyr_vanna",
+   "onscreen": "Tyr Vanna",
+   "battle_name": "Tyr Vanna",
+   "in_encyclopedia": 1,
+   "rgb": [
+    30,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_cythral",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_fyr_darric_feast_halls",
+   "onscreen": "Feast Halls of the Wardancers",
+   "battle_name": "Feast Halls of the Wardancers",
+   "in_encyclopedia": 1,
+   "rgb": [
+    200,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_fyr_darric",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_fyr_darric_threllock",
+   "onscreen": "Threllock",
+   "battle_name": "Threllock",
+   "in_encyclopedia": 1,
+   "rgb": [
+    200,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_fyr_darric",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_gisoreux_berghres",
+   "onscreen": "Fort Bergbres",
+   "battle_name": "Fort Bergbres",
+   "in_encyclopedia": 1,
+   "rgb": [
+    50,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_gisoreux",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_gisoreux_castle_desfleuve",
+   "onscreen": "Castle Desfleuve",
+   "battle_name": "Castle Desfleuve",
+   "in_encyclopedia": 1,
+   "rgb": [
+    50,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_gisoreux",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_gisoreux_gisoreux",
+   "onscreen": "Gisoreux",
+   "battle_name": "Gisoreux",
+   "in_encyclopedia": 1,
+   "rgb": [
+    50,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_gisoreux",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_2_blackstone_post",
+   "onscreen": "Blackstone Post",
+   "battle_name": "Blackstone Post",
+   "in_encyclopedia": 1,
+   "rgb": [
+    173,
+    5,
+    184
+   ],
+   "province": "wh_dlc05_grey_mountains_2",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_2_karak_tzor",
+   "onscreen": "Karak Tzor",
+   "battle_name": "Karak Tzor",
+   "in_encyclopedia": 1,
+   "rgb": [
+    15,
+    212,
+    119
+   ],
+   "province": "wh_dlc05_grey_mountains_2",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_2_karak_ziflin",
+   "onscreen": "Karak Ziflin",
+   "battle_name": "Karak Ziflin",
+   "in_encyclopedia": 1,
+   "rgb": [
+    112,
+    170,
+    240
+   ],
+   "province": "wh_dlc05_grey_mountains_2",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_axe_bite_pass",
+   "onscreen": "Axe Bite Pass",
+   "battle_name": "Axe Bite Pass",
+   "in_encyclopedia": 1,
+   "rgb": [
+    80,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_grey_mountains",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_gragrut_pass",
+   "onscreen": "Gragrut Pass",
+   "battle_name": "Gragrut Pass",
+   "in_encyclopedia": 1,
+   "rgb": [
+    80,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_grey_mountains",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_grey_mountains_gristle_valley",
+   "onscreen": "Gristle Valley",
+   "battle_name": "Gristle Valley",
+   "in_encyclopedia": 1,
+   "rgb": [
+    80,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_grey_mountains",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_massif_orcal_massif_orcal",
+   "onscreen": "Massif Orcal",
+   "battle_name": "Massif Orcal",
+   "in_encyclopedia": 1,
+   "rgb": [
+    100,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_massif_orcal",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_massif_orcal_orquemont",
+   "onscreen": "Orquemont",
+   "battle_name": "Orquemont",
+   "in_encyclopedia": 1,
+   "rgb": [
+    110,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_massif_orcal",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_modryn_glade_of_eternal_midnight",
+   "onscreen": "Glade of Eternal Midnight",
+   "battle_name": "Glade of Eternal Midnight",
+   "in_encyclopedia": 1,
+   "rgb": [
+    240,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_modryn",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_montfort_montfort",
+   "onscreen": "Montfort",
+   "battle_name": "Montfort",
+   "in_encyclopedia": 1,
+   "rgb": [
+    60,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_montfort",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_montfort_poussenc",
+   "onscreen": "Poussenc",
+   "battle_name": "Poussenc",
+   "in_encyclopedia": 1,
+   "rgb": [
+    60,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_montfort",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_montfort_tharravil",
+   "onscreen": "Tharravil",
+   "battle_name": "Tharravil",
+   "in_encyclopedia": 1,
+   "rgb": [
+    60,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_montfort",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_mousillon_castle_rachard",
+   "onscreen": "Castle Rachard",
+   "battle_name": "Castle Rachard",
+   "in_encyclopedia": 1,
+   "rgb": [
+    90,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_mousillon",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_mousillon_martel",
+   "onscreen": "Martel",
+   "battle_name": "Martel",
+   "in_encyclopedia": 1,
+   "rgb": [
+    90,
+    20,
+    0
+   ],
+   "province": "wh_dlc05_mousillon",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_mousillon_mousillon",
+   "onscreen": "Mousillon",
+   "battle_name": "Mousillon",
+   "in_encyclopedia": 1,
+   "rgb": [
+    90,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_mousillon",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_mousillon_yremy",
+   "onscreen": "Yremy",
+   "battle_name": "Yremy",
+   "in_encyclopedia": 1,
+   "rgb": [
+    90,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_mousillon",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_oak_of_ages",
+   "onscreen": "The Oak of Ages",
+   "battle_name": "The Oak of Ages",
+   "in_encyclopedia": 1,
+   "rgb": [
+    0,
+    0,
+    200
+   ],
+   "province": "wh_dlc05_oak_of_ages",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_parravon_grunere",
+   "onscreen": "Grunere",
+   "battle_name": "Grunere",
+   "in_encyclopedia": 1,
+   "rgb": [
+    120,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_parravon",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_parravon_montlac",
+   "onscreen": "Montlac",
+   "battle_name": "Montlac",
+   "in_encyclopedia": 1,
+   "rgb": [
+    120,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_parravon",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_parravon_parravon",
+   "onscreen": "Parravon",
+   "battle_name": "Parravon",
+   "in_encyclopedia": 1,
+   "rgb": [
+    120,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_parravon",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_quenelles_brusse",
+   "onscreen": "Brusse",
+   "battle_name": "Brusse",
+   "in_encyclopedia": 1,
+   "rgb": [
+    130,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_quenelles",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_quenelles_laguiller",
+   "onscreen": "Laguiller",
+   "battle_name": "Laguiller",
+   "in_encyclopedia": 1,
+   "rgb": [
+    130,
+    15,
+    0
+   ],
+   "province": "wh_dlc05_quenelles",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_quenelles_quenelles",
+   "onscreen": "Quenelles",
+   "battle_name": "Quenelles",
+   "in_encyclopedia": 1,
+   "rgb": [
+    130,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_quenelles",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_sea_northern_golfe_du_bidouze",
+   "onscreen": "Northern Golfe du Bidouze",
+   "battle_name": "Northern Golfe du Bidouze",
+   "in_encyclopedia": 1,
+   "rgb": [
+    20,
+    0,
+    0
+   ],
+   "is_sea": 1
+  },
+  {
+   "key": "wh_dlc05_sea_southern_golfe_du_bidouze",
+   "onscreen": "Southern Golfe du Bidouze",
+   "battle_name": "Southern Golfe du Bidouze",
+   "in_encyclopedia": 1,
+   "rgb": [
+    10,
+    0,
+    0
+   ],
+   "is_sea": 1
+  },
+  {
+   "key": "wh_dlc05_talsyn_tal_eth_ayr",
+   "onscreen": "Tal Eth Ayr",
+   "battle_name": "Tal Eth Ayr",
+   "in_encyclopedia": 1,
+   "rgb": [
+    220,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_talsyn",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_talsyn_yn_ecryl_koiran",
+   "onscreen": "King's Glade",
+   "battle_name": "King's Glade",
+   "in_encyclopedia": 1,
+   "rgb": [
+    220,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_talsyn",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_tirsyth_glade_of_eternal_moonlight",
+   "onscreen": "Glade of Eternal Moonlight",
+   "battle_name": "Glade of Eternal Moonlight",
+   "in_encyclopedia": 1,
+   "rgb": [
+    160,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_tirsyth",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_torgovann_cromlech_cadai",
+   "onscreen": "The Cromlech of Cadai",
+   "battle_name": "The Cromlech of Cadai",
+   "in_encyclopedia": 1,
+   "rgb": [
+    230,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_torgovann",
+   "is_capital": 0
+  },
+  {
+   "key": "wh_dlc05_torgovann_vauls_anvil",
+   "onscreen": "Vaul's Anvil",
+   "battle_name": "Vaul's Anvil",
+   "in_encyclopedia": 1,
+   "rgb": [
+    230,
+    0,
+    0
+   ],
+   "province": "wh_dlc05_torgovann",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_wilderness_land",
+   "onscreen": "Wilderness Land",
+   "battle_name": "Wilderness Land",
+   "in_encyclopedia": 1,
+   "rgb": [
+    5,
+    255,
+    1
+   ]
+  },
+  {
+   "key": "wh_dlc05_wilderness_sea",
+   "onscreen": "Wilderness Sea",
+   "battle_name": "Wilderness Sea",
+   "in_encyclopedia": 1,
+   "rgb": [
+    5,
+    255,
+    10
+   ],
+   "is_sea": 1
+  },
+  {
+   "key": "wh_dlc05_wydrioth_crag_halls",
+   "onscreen": "Crag Halls of Findol",
+   "battle_name": "Crag Halls of Findol",
+   "in_encyclopedia": 1,
+   "rgb": [
+    210,
+    5,
+    0
+   ],
+   "province": "wh_dlc05_wydrioth",
+   "is_capital": 1
+  },
+  {
+   "key": "wh_dlc05_wydrioth_tal_jul_finel",
+   "onscreen": "Tal Jul-Finel",
+   "battle_name": "Tal Jul-Finel",
+   "in_encyclopedia": 1,
+   "rgb": [
+    210,
+    10,
+    0
+   ],
+   "province": "wh_dlc05_wydrioth",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_lyonesse_lyonesse",
+   "onscreen": "Lyonesse",
+   "battle_name": "Lyonesse",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    160,
+    195,
+    165
+   ],
+   "province": "saison_province_lyonesse",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_lyonesse_barfleur",
+   "onscreen": "Barfleur",
+   "battle_name": "Barfleur",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    160,
+    180,
+    205
+   ],
+   "province": "saison_province_lyonesse",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_lyonesse_merton",
+   "onscreen": "Merton",
+   "battle_name": "Merton",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    80,
+    75,
+    180
+   ],
+   "province": "saison_province_lyonesse",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_lyonesse_ora_lamae",
+   "onscreen": "Ora Lamae",
+   "battle_name": "Ora Lamae",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    170,
+    220,
+    215
+   ],
+   "province": "saison_province_lyonesse",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_tor_soleil",
+   "onscreen": "Tor Soleil",
+   "battle_name": "Tor Soleil",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    115,
+    65,
+    45
+   ],
+   "province": "saison_province_tor_soleil",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_languille_languille",
+   "onscreen": "L'Anguille",
+   "battle_name": "L'Anguille",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    225,
+    70,
+    215
+   ],
+   "province": "saison_province_languille",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_languille_erguy",
+   "onscreen": "Erguy",
+   "battle_name": "Erguy",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    20,
+    185,
+    40
+   ],
+   "province": "saison_province_languille",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_couronne_couronne",
+   "onscreen": "Couronne",
+   "battle_name": "Couronne",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    35,
+    30,
+    80
+   ],
+   "province": "saison_province_couronne",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_couronne_hendaye",
+   "onscreen": "Hendaye",
+   "battle_name": "Hendaye",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    95,
+    210,
+    25
+   ],
+   "province": "saison_province_couronne",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_couronne_brillionne",
+   "onscreen": "Brilloinne Castle",
+   "battle_name": "Brilloinne Castle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    165,
+    120,
+    160
+   ],
+   "province": "saison_province_couronne",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_couronne_contreforts",
+   "onscreen": "The Contreforts",
+   "battle_name": "The Contreforts",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    90,
+    220,
+    110
+   ],
+   "province": "saison_province_couronne",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_marches_chateau_de_tancred",
+   "onscreen": "Tancred Castle",
+   "battle_name": "Tancred Castle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    175,
+    20,
+    230
+   ],
+   "province": "saison_province_marches",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_marches_chantillon",
+   "onscreen": "Chantillon",
+   "battle_name": "Chantillon",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    45,
+    165,
+    225
+   ],
+   "province": "saison_province_marches",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_artois_chateau_artois",
+   "onscreen": "Castle Artois",
+   "battle_name": "Castle Artois",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    105,
+    150,
+    195
+   ],
+   "province": "saison_province_artois",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_artois_larret",
+   "onscreen": "Larret",
+   "battle_name": "Larret",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    45,
+    245,
+    100
+   ],
+   "province": "saison_province_artois",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_artois_uesin",
+   "onscreen": "Uesin",
+   "battle_name": "Uesin",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    120,
+    90,
+    180
+   ],
+   "province": "saison_province_artois",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_artois_sigmarsheim",
+   "onscreen": "Sigmarsheim",
+   "battle_name": "Sigmarsheim",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    110,
+    25,
+    40
+   ],
+   "province": "saison_province_artois",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_irrana_repaire_orques_de_fer",
+   "onscreen": "Iron Orc Lair",
+   "battle_name": "Iron Orc Lair",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    200,
+    50,
+    145
+   ],
+   "province": "saison_province_irrana",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_irrana_camp_orques_de_fer",
+   "onscreen": "Iron Orc Camp",
+   "battle_name": "Iron Orc Camp",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    50,
+    110,
+    140
+   ],
+   "province": "saison_province_irrana",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_soeurs_pales",
+   "onscreen": "The Pale Sisters",
+   "battle_name": "The Pale Sisters",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    40,
+    25,
+    235
+   ],
+   "province": "saison_province_soeurs_pales",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_grises_grung_zint",
+   "onscreen": "Grung Zint",
+   "battle_name": "Grung Zint",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    20,
+    85,
+    85
+   ],
+   "province": "wh_dlc05_grey_mountains_2",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reikland_helmgart",
+   "onscreen": "Helmgart",
+   "battle_name": "Helmgart",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    35,
+    170,
+    140
+   ],
+   "province": "saison_province_reikland",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reikland_ubersreik",
+   "onscreen": "Ubersreik",
+   "battle_name": "Ubersreik",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    245,
+    145,
+    150
+   ],
+   "province": "saison_province_reikland",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_parravon_la_maisontaal",
+   "onscreen": "La Maisontaal",
+   "battle_name": "La Maisontaal",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    125,
+    45,
+    115
+   ],
+   "province": "wh_dlc05_parravon",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_dame_grise_karak_azgaraz",
+   "onscreen": "Karak Azgaraz",
+   "battle_name": "Karak Azgaraz",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    125,
+    20,
+    150
+   ],
+   "province": "saison_province_dame_grise",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_dame_grise_lune_sanglante",
+   "onscreen": "Bleeding Moon Lair",
+   "battle_name": "Bleeding Moon Lair",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    245,
+    50,
+    20
+   ],
+   "province": "saison_province_dame_grise",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_grises_sud_karak_norn",
+   "onscreen": "Karak Norn",
+   "battle_name": "Karak Norn",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    75,
+    235,
+    195
+   ],
+   "province": "saison_province_grises_sud",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_grises_sud_ongles_rouges",
+   "onscreen": "Red Nails Lair",
+   "battle_name": "Red Nails Lair",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    225,
+    140,
+    55
+   ],
+   "province": "saison_province_grises_sud",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_grises_sud_grimhold",
+   "onscreen": "Grimhold",
+   "battle_name": "Grimhold",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    145,
+    150,
+    85
+   ],
+   "province": "saison_province_grises_sud",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_tor_martel",
+   "onscreen": "Tor Martel",
+   "battle_name": "Tor Martel",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    20,
+    105,
+    205
+   ],
+   "province": "saison_province_tor_martel",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_tor_martel_petite",
+   "onscreen": "Lesser Tor Martel Isle",
+   "battle_name": "Lesser Tor Martel Isle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    225,
+    200,
+    50
+   ],
+   "province": "saison_province_tor_martel",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_ile_silencieuse",
+   "onscreen": "The Silent Isle",
+   "battle_name": "The Silent Isle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    160,
+    100,
+    20
+   ],
+   "province": "saison_province_ile_silencieuse",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_aquitaine_aquitanie",
+   "onscreen": "Aquitaine",
+   "battle_name": "Aquitaine",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    215,
+    125,
+    110
+   ],
+   "province": "wh_dlc05_aquitaine",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_pre_de_ceren",
+   "onscreen": "Ceren Field",
+   "battle_name": "Ceren Field",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    220,
+    95,
+    20
+   ],
+   "province": "saison_province_pre_de_ceren",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_massif_orcal_viefin",
+   "onscreen": "Viefin",
+   "battle_name": "Viefin",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    205,
+    170,
+    200
+   ],
+   "province": "wh_dlc05_massif_orcal",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_glanborielle_dragon_falls",
+   "onscreen": "Dragon Falls",
+   "battle_name": "Dragon Falls",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    60,
+    140,
+    75
+   ],
+   "province": "saison_province_glanborielle",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_carcassonne_tumulus_de_grudsnik",
+   "onscreen": "Burial Mound of Grudsnik",
+   "battle_name": "Burial Mound of Grudsnik",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    80,
+    70,
+    220
+   ],
+   "province": "wh_dlc05_carcassonne",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_massif_orcal_crac_de_sang",
+   "onscreen": "Crac de Sang",
+   "battle_name": "Crac de Sang",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    45,
+    150,
+    35
+   ],
+   "province": "wh_dlc05_massif_orcal",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_glanborielle_chateau_lovarre",
+   "onscreen": "Château Lovarre",
+   "battle_name": "Château Lovarre",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    50,
+    50,
+    30
+   ],
+   "province": "saison_province_glanborielle",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_bastonne_chateau_sangasse",
+   "onscreen": "Castle Sangasse",
+   "battle_name": "Castle Sangasse",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    180,
+    100,
+    95
+   ],
+   "province": "wh_dlc05_bastonne",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_quenelles_marguilles",
+   "onscreen": "Marguilles",
+   "battle_name": "Marguilles",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    110,
+    185,
+    75
+   ],
+   "province": "wh_dlc05_quenelles",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_wydrioth_porte_de_druthandor",
+   "onscreen": "Druthandor Gate",
+   "battle_name": "Druthandor Gate",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    105,
+    85,
+    85
+   ],
+   "province": "wh_dlc05_wydrioth",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_atylwyth_tal_mora",
+   "onscreen": "Tal Mora",
+   "battle_name": "Tal Mora",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    200,
+    60,
+    45
+   ],
+   "province": "wh_dlc05_atylwyth",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_languille_chateau_de_grasgar",
+   "onscreen": "Grasgar Castle",
+   "battle_name": "Grasgar Castle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    125,
+    230,
+    240
+   ],
+   "province": "saison_province_languille",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_gisoreux_oisillon",
+   "onscreen": "Oisillon",
+   "battle_name": "Oisillon",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    185,
+    205,
+    60
+   ],
+   "province": "wh_dlc05_gisoreux",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_dame_grise_chateau_de_sanglac",
+   "onscreen": "Sanglac Castle",
+   "battle_name": "Sanglac Castle",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    170,
+    130,
+    240
+   ],
+   "province": "saison_province_dame_grise",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_glanborielle_fort_solstice",
+   "onscreen": "Summersfall Fort",
+   "battle_name": "Summersfall Fort",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    140,
+    60,
+    160
+   ],
+   "province": "saison_province_glanborielle",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_sea_gue_de_mistnar",
+   "onscreen": "The Mistnar Crossing",
+   "battle_name": "The Mistnar Crossing",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_du_milieu",
+   "onscreen": "Middle Sea",
+   "battle_name": "Middle Sea",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_silencieuse",
+   "onscreen": "The Silent Sea",
+   "battle_name": "The Silent Sea",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_baie_moussille",
+   "onscreen": "Moussille Bay",
+   "battle_name": "Moussille Bay",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_baie_lyonen",
+   "onscreen": "Lyonen Bay",
+   "battle_name": "Lyonen Bay",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_canal_d_albion",
+   "onscreen": "The Albion Channel",
+   "battle_name": "The Albion Channel",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_gueule_dragon",
+   "onscreen": "The Dragon's Maw",
+   "battle_name": "The Dragon's Maw",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_baie_languille",
+   "onscreen": "L'Anguille Bay",
+   "battle_name": "L'Anguille Bay",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_chaos_meridionale",
+   "onscreen": "Southern Sea of Chaos",
+   "battle_name": "Southern Sea of Chaos",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_manaanspoort",
+   "onscreen": "Manaanspoort Sea",
+   "battle_name": "Manaanspoort Sea",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_sea_des_griffes",
+   "onscreen": "Sea of Claws",
+   "battle_name": "Sea of Claws",
+   "in_encyclopedia": 1,
+   "is_sea": 1,
+   "rgb": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "key": "saison_reves_argwylon_waterfall_palace",
+   "onscreen": "Waterfall Palace (reflection)",
+   "battle_name": "Waterfall Palace (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    170,
+    40,
+    115
+   ],
+   "province": "saison_province_reves_ete",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_tirsyth_glade_of_eternal_moonlight",
+   "onscreen": "Glade of Eternal Moonlight (reflection)",
+   "battle_name": "Glade of Eternal Moonlight (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    135,
+    30,
+    245
+   ],
+   "province": "saison_province_reves_ete",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_arranoc_tal_esth",
+   "onscreen": "Tal Esth (reflection)",
+   "battle_name": "Tal Esth (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    175,
+    200,
+    20
+   ],
+   "province": "saison_province_reves_ete",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_anmyr_tal_rond",
+   "onscreen": "Tal Rond (reflection)",
+   "battle_name": "Tal Rond (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    215,
+    230,
+    140
+   ],
+   "province": "saison_province_reves_nord_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_fyr_darric_feast_halls",
+   "onscreen": "Feast Halls of the Wardancers (reflection)",
+   "battle_name": "Feast Halls of the Wardancers (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    45,
+    220,
+    55
+   ],
+   "province": "saison_province_reves_nord_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_anmyr_halls_of_anaereth",
+   "onscreen": "Halls of Anaereth (reflection)",
+   "battle_name": "Halls of Anaereth (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    190,
+    45,
+    185
+   ],
+   "province": "saison_province_reves_nord_ouest",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_wydrioth_crag_halls",
+   "onscreen": "Crag Halls of Findol (reflection)",
+   "battle_name": "Crag Halls of Findol (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    230,
+    175,
+    100
+   ],
+   "province": "saison_province_reves_est",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_fyr_darric_threllock",
+   "onscreen": "Threllock (reflection)",
+   "battle_name": "Threllock (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    20,
+    135,
+    115
+   ],
+   "province": "saison_province_reves_nord_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_torgovann_vauls_anvil",
+   "onscreen": "Vaul's Anvil (reflection)",
+   "battle_name": "Vaul's Anvil (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    125,
+    230,
+    160
+   ],
+   "province": "saison_province_reves_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_wydrioth_tal_jul_finel",
+   "onscreen": "Tal Jul-Finel (reflection)",
+   "battle_name": "Tal Jul-Finel (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    145,
+    230,
+    100
+   ],
+   "province": "saison_province_reves_est",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_talsyn_tal_eth_ayr",
+   "onscreen": "Tal Eth Ayr (reflection)",
+   "battle_name": "Tal Eth Ayr (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    80,
+    220,
+    155
+   ],
+   "province": "saison_province_reves_est",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_torgovann_cromlech_cadai",
+   "onscreen": "The Cromlech of Cadai (reflection)",
+   "battle_name": "The Cromlech of Cadai (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    245,
+    40,
+    105
+   ],
+   "province": "saison_province_reves_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_talsyn_yn_ecryl_koiran",
+   "onscreen": "King's Glade (reflection)",
+   "battle_name": "King's Glade (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    30,
+    235,
+    245
+   ],
+   "province": "saison_province_reves_est",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_modryn_glade_of_eternal_midnight",
+   "onscreen": "Glade of Eternal Midnight (reflection)",
+   "battle_name": "Glade of Eternal Midnight (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    115,
+    225,
+    200
+   ],
+   "province": "saison_province_reves_ouest",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_oak_of_ages",
+   "onscreen": "The Oak of Ages (reflection)",
+   "battle_name": "The Oak of Ages (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    235,
+    80,
+    80
+   ],
+   "province": "saison_province_reves_coeur",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_cavaroc_halls_of_equos",
+   "onscreen": "Halls of Equos (reflection)",
+   "battle_name": "Halls of Equos (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    245,
+    20,
+    170
+   ],
+   "province": "saison_province_reves_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_reves_atylwyth_tal_amere",
+   "onscreen": "Tal Amere (reflection)",
+   "battle_name": "Tal Amere (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    190,
+    245,
+    30
+   ],
+   "province": "saison_province_reves_hiver",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_reves_cythral_tyr_vanna",
+   "onscreen": "Tyr Vanna (reflection)",
+   "battle_name": "Tyr Vanna (reflection)",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    90,
+    45,
+    150
+   ],
+   "province": "saison_province_reves_hiver",
+   "is_capital": 0
+  }
+ ],
+ "roads": [
+  {
+   "key": "saison_expanded_road_lv_1",
+   "movement_cost": 80,
+   "threshold": 0,
+   "turns_required_to_downgrade_from": 1,
+   "turns_required_to_upgrade_to": 1
+  },
+  {
+   "key": "saison_expanded_road_lv_2",
+   "movement_cost": 65,
+   "threshold": 10,
+   "turns_required_to_downgrade_from": 1,
+   "turns_required_to_upgrade_to": 1
+  },
+  {
+   "key": "saison_expanded_road_lv_3",
+   "movement_cost": 50,
+   "threshold": 40,
+   "turns_required_to_downgrade_from": 1,
+   "turns_required_to_upgrade_to": 1
+  }
+ ],
+ "playable_area": {
+  "index": 1758400003,
+  "onscreen": "The Season of Revelation: Expanded",
+  "description": "The Wood Elves are, by their own reckoning, enjoying a period of relative calm. As life in the Old World carries on apace, the Asrai are rarely troubled by it. Incursions by the foolhardy have been dealt with; dazzling defeats inflicted, stunning victories won, and the forest roots nourished with the blood of trespassing outsiders. Now, something is coming back to terrorise the Athel Lorens woodland glades  something altogether more dangerous than mere Greenskin raiders or Bretonnian treasure hunters. The entire forest must fight now, for its very existence is under the gravest threat. Prepare your kindred, for this is the Season of Revelation!",
+  "minx": 79.96,
+  "miny": 192.56,
+  "maxx": 346.49,
+  "maxy": 531.46,
+  "stem": "saison_expanded",
+  "meaningful_id": "main_rome_map",
+  "map_file": "saison_expanded_map.png"
+ },
+ "areas_of_interest": [],
+ "settlements": [
+  {
+   "region": "wh_dlc05_anmyr_halls_of_anaereth",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_anmyr_tal_rond",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_aquitaine_chateau_depee",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_aquitaine_derrevin_libre",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_aquitaine_gien",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_argwylon_waterfall_palace",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_arranoc_tal_esth",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_atylwyth_tal_amere",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_bastonne_castle_bastonne",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_bastonne_humble_chapel",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_bastonne_soude",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_bordeleaux_bordeleaux",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_bordeleaux_turris_vigilans",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_brionne_brionne",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_brionne_castle_gransette",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_brionne_muret",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_carcassonne_castle_carcassonne",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_carcassonne_ferignac",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_carcassonne_st_jacques",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_cavaroc_halls_of_equos",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_cythral_tyr_vanna",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_fyr_darric_feast_halls",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_fyr_darric_threllock",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_gisoreux_berghres",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_gisoreux_castle_desfleuve",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_gisoreux_gisoreux",
+   "climate_type": "climate_temperate",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_2_blackstone_post",
+   "climate_type": "climate_mountain",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_2_karak_tzor",
+   "climate_type": "climate_mountain",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_2_karak_ziflin",
+   "climate_type": "climate_mountain",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_axe_bite_pass",
+   "climate_type": "climate_mountain",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_gragrut_pass",
+   "climate_type": "climate_mountain",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_grey_mountains_gristle_valley",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "wh_dlc05_massif_orcal_massif_orcal",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "wh_dlc05_massif_orcal_orquemont",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "wh_dlc05_modryn_glade_of_eternal_midnight",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_montfort_montfort",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_montfort_poussenc",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_montfort_tharravil",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_mousillon_castle_rachard",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_mousillon_martel",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_mousillon_mousillon",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_mousillon_yremy",
+   "climate_type": "climate_temperate",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_oak_of_ages",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_parravon_grunere",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_parravon_montlac",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_parravon_parravon",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_quenelles_brusse",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_quenelles_laguiller",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_quenelles_quenelles",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "wh_dlc05_talsyn_tal_eth_ayr",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_talsyn_yn_ecryl_koiran",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_tirsyth_glade_of_eternal_moonlight",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_torgovann_cromlech_cadai",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_torgovann_vauls_anvil",
+   "climate_type": "climate_magicforest",
+   "citybar_height_offset": 0
+  },
+  {
+   "region": "wh_dlc05_wydrioth_crag_halls",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "wh_dlc05_wydrioth_tal_jul_finel",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_lyonesse_lyonesse",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_lyonesse_barfleur",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_lyonesse_merton",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_lyonesse_ora_lamae",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_tor_soleil",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_languille_languille",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_languille_erguy",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_couronne_couronne",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_couronne_hendaye",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_couronne_brillionne",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_couronne_contreforts",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_marches_chateau_de_tancred",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_marches_chantillon",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_artois_chateau_artois",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_artois_larret",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_artois_uesin",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_artois_sigmarsheim",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_irrana_repaire_orques_de_fer",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_irrana_camp_orques_de_fer",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_soeurs_pales",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_grises_grung_zint",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_reikland_helmgart",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_reikland_ubersreik",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_parravon_la_maisontaal",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_dame_grise_karak_azgaraz",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_dame_grise_lune_sanglante",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_grises_sud_karak_norn",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_grises_sud_ongles_rouges",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_grises_sud_grimhold",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_tor_martel",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_tor_martel_petite",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_ile_silencieuse",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_aquitaine_aquitanie",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_pre_de_ceren",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_massif_orcal_viefin",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_glanborielle_dragon_falls",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_carcassonne_tumulus_de_grudsnik",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_massif_orcal_crac_de_sang",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_glanborielle_chateau_lovarre",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_bastonne_chateau_sangasse",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_quenelles_marguilles",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_wydrioth_porte_de_druthandor",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_atylwyth_tal_mora",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_languille_chateau_de_grasgar",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_gisoreux_oisillon",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_dame_grise_chateau_de_sanglac",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_glanborielle_fort_solstice",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_reves_argwylon_waterfall_palace",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_tirsyth_glade_of_eternal_moonlight",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_arranoc_tal_esth",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_anmyr_tal_rond",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_fyr_darric_feast_halls",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_anmyr_halls_of_anaereth",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_wydrioth_crag_halls",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_fyr_darric_threllock",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_torgovann_vauls_anvil",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_wydrioth_tal_jul_finel",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_talsyn_tal_eth_ayr",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_torgovann_cromlech_cadai",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_talsyn_yn_ecryl_koiran",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_modryn_glade_of_eternal_midnight",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_oak_of_ages",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_cavaroc_halls_of_equos",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_atylwyth_tal_amere",
+   "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_reves_cythral_tyr_vanna",
+   "climate_type": "climate_magicforest"
+  }
+ ]
+}
