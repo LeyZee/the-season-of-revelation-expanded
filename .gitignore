@@ -14,4 +14,5 @@ __pycache__/
 03-references/
 05-journal/
 99-archives/
+# marque de ce générateur
 .depot-genere
