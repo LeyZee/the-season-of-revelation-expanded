@@ -13,6 +13,8 @@ map is the heart of it: its relief, props, trees and water are kept, while its p
 [Atlas of Bretonnia](https://bretonia.dev): the dukedoms, the mountains, the coasts, and, far to the south, the Dreaming Wood.
 It is **built in public**: every step is logged in the [journal](docs/fr/JOURNAL.md).
 
+<p align="center"><img src="docs/art/card.svg" width="100%" alt="Season Expanded where the map stands: 560 by 905 hexes, 131 settlements, 16 Atlas factions plus Tor Soleil, test build"></p>
+
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 
 ## <img src="docs/art/seal-green.svg" height="34" alt=""> At a glance

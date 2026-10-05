@@ -13,6 +13,8 @@ provinces sont redessinées d'après l'Atlas (villes nouvelles, trois raccords d
 d'après l'[Atlas de Bretonnie](https://bretonia.dev) : les duchés, les montagnes, les côtes et, loin au sud, le Bois Rêveur. Le
 chantier est **construit en public** : chaque étape est dans le [journal](docs/fr/JOURNAL.md).
 
+<p align="center"><img src="docs/art/card-fr.svg" width="100%" alt="Saison Expanded, où en est la carte : 560 par 905 hex, 131 colonies, 16 factions de l'Atlas plus Tor Soleil, version d'essai"></p>
+
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 
 ## <img src="docs/art/seal-green.svg" height="34" alt=""> D'un coup d'œil

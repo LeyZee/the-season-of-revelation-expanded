@@ -923,3 +923,17 @@ Plan : `PLAN.md` ; principes et données de l'Atlas : `README.md`.
   monte au-delà de BAS_U (0,8) dans les 3 hex vers l'intérieur redevient falaise, sauf ports (et leurs voisines) et
   embouchures ; puis les restes de moins de 3 cases. 909 -> 621 plages (345 cases rendues à la falaise) ; sauvegarde
   `terrain-backups\20261005-122335-…-avant-plages` ; validate 0 / 1. Préavis kit 12:43:44, chaîne lancée.
+- **5.10.2026, 13 h 30 – 13 h 55** — AUDIT DES MONTAGNES (Charles : « montagnes cohérentes, jolies, naturelles entre
+  elles… pics, karaks, passages naturels… ne pas bloquer les armées… même très mineur »). `scratchpad\audit_montagnes.py`,
+  `audit_montagnes2.py`, `audit_poses_wh1.py` (référence : la zone de WH1). (a) murs invisibles : 15 hex, terre sauvage du
+  bord, rien à faire ; connexité : les 131 colonies sur une seule composante franchissable, ports aussi. (b) 24 des 999
+  poses de montagne de WH1 gardées (pivot dans la zone de WH1) débordaient sur 1 854 hex FRANCHISSABLES de l'Atlas, les
+  grandes montagnes de bordure à 80-92 % hors de la zone (Sanglac, La Maisontaal, Sœurs Pâles, Grung Zint, Helmgart, Voûtes)
+  : « deux styles de montagne qui se chevauchent », armées à travers la roche. Nouveau `outils\montagnes_wh1_expanded.py` :
+  pose retirée si moins de la moitié de son rectangle est dans la zone gardée (objet et relief de WH1 gardé ; projet_expanded
+  lit `est_retiree`) ; sous la ROCHE (emprise au pixel `relief-wh1\montagnes_wh1.npy`) des poses gardées, 251 hex de l'Atlas
+  franchissables -> infranchissables (jamais ville, étendue, route, rivière, pont, plage), hex isolés laissés, 6 hex de poche
+  refermés ; sauvegarde `terrain-backups\20261005-135134-…-avant-roche-wh1` ; validate 0 / 1 ; 1 composante. (c) 4 275 hex
+  franchissables de l'extension plus raides que 99 % de ceux de WH1 (pieds des massifs, cols des Voûtes et des Grises) :
+  nouveau `outils\vallees_relief.py` (projet_expanded, avant les côtes) : sur la terre franchissable de l'extension (masque
+  lissé), relief ≤ fond de vallée local + 0,3 u, fondu sur 0,6 hex depuis le bord ; la montée se fait sur l'infranchissable.

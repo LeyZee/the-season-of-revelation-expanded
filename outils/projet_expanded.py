@@ -226,6 +226,7 @@ def montagnes_gardees(f, reste):
         return _GARDE[cle]
     sys.path.insert(0, os.path.join(ATELIER, "02-scripts"))
     import montagnes_wh1 as MW
+    import montagnes_wh1_expanded
     from cadre_expanded import px_de
     garde = garde_wh1_hex()
     m = np.zeros((H * f + reste, W * f), np.uint8)
@@ -236,6 +237,9 @@ def montagnes_gardees(f, reste):
         q, r = int(x / (LARGEUR_S / SW)), int(z / (PROF_S / SH))
         if not (0 <= q < SW and 0 <= r < SH and garde[DY + r, DXH + q]):
             continue                                       # pose retirée de la bordure (projet_expanded, trie)
+        # (5.10.2026) ni les montagnes de bordure de WH1 surtout HORS de la zone gardée (montagnes_wh1_expanded)
+        if montagnes_wh1_expanded.est_retiree(float(x), float(z)):
+            continue
         vx = np.array([0.0, 128.0 * p.W, 0.0, 128.0 * p.W])
         vz = np.array([0.0, 0.0, -128.0 * p.H, -128.0 * p.H])
         wx, wz = MW.vers_monde(p, vx, vz)
@@ -1039,6 +1043,18 @@ def main():
     mer_c, fal_c, pla_c = cotes_relief.masques_tuiles(tuiles, height.shape, tuiles_expanded.lacs_eau(tuiles.shape))
     reves_c = np.zeros(height.shape, bool)
     reves_c[(H - SUD) * f:] = True
+    # (5.10.2026, Charles : « les passages entre les montagnes… naturels… ne pas bloquer les armées ») les fonds de vallée
+    # franchissables de l'extension sans versant (vallees_relief.py) ; avant les côtes, qui ont le dernier mot
+    import vallees_relief
+    S_v = os.path.join(ICI, r"couches-expanded\villes-sortie")
+    imp_v = read_layer(os.path.join(S_v, "layer_impassable.hex_layer"))[1].reshape(H, W)
+    gt_v = read_layer(os.path.join(S_v, "layer_groundtypes.hex_layer"))[1].reshape(H, W)
+    n_terre_v = len(caime_names(CAIME, os.path.join(ICI, r"caime\saison_expanded_map\map.hex"))[0].get("Land ground types", []))
+    passe_v = chenaux_fleuves.px_nord((imp_v == 1) & (gt_v >= 0) & (gt_v < n_terre_v), f, reste)
+    height, delta_v, b_v = vallees_relief.aplanir(height, passe_v,
+                                                  garde_masque(f, reste) | montagnes_gardees(f, reste) | reves_c | mer_c)
+    delta_ch = (delta_ch + delta_v).astype(np.float32)
+    print(f"  fonds de vallée franchissables de l'extension : {b_v}")
     height, sea_im, delta_c, b_c = cotes_relief.raccorder(height, sea_im, mer_c, fal_c, pla_c, UX_PX,
                                                           montagnes_gardees(f, reste), reves_c)
     # (5.10.2026) le relief sous les tuiles de MER change aussi (continu avec la côte) : les objets posés sur l'eau
@@ -1113,10 +1129,11 @@ def main():
     # abaissées (chenaux_fleuves.relief), leur hauteur suit le relief (y + delta)
     chenal = chenaux_fleuves.chenal_hex()
     pos_y = re.compile(r'(<ECTransform position="[-0-9.eE]+ )([-0-9.eE]+)( [-0-9.eE]+")')
-    n_chenal, n_recales = 0, 0
+    n_chenal, n_recales, n_montagnes_ret = 0, 0, 0
+    import montagnes_wh1_expanded
 
     def trie(m):
-        nonlocal n_retires, n_chenal, n_recales
+        nonlocal n_retires, n_chenal, n_recales, n_montagnes_ret
         if eau_expanded.est_mer_wh1(m.group(0)):
             return ""                 # (3.10.2026) remplacés par les plans d'eau d'Expanded (eau_expanded)
         p_ = pos.search(m.group(0))
@@ -1130,6 +1147,11 @@ def main():
             return ""
         if "/models/river_wh1_" in m.group(0):
             return m.group(0)         # sommets recalés un à un par rivieres_maillages_expanded (pas le centre)
+        # (5.10.2026, Charles : « montagnes cohérentes… les passages ne doivent pas bloquer les armées ») les montagnes de
+        # bordure de WH1 surtout HORS de la zone gardée (pivot dedans, roche sur l'Atlas) : retirées (montagnes_wh1_expanded)
+        if "_wh1/campaign/montagnes" in m.group(0) and montagnes_wh1_expanded.est_retiree(x_, z_):
+            n_montagnes_ret += 1
+            return ""
         if 0 <= q < SW and 0 <= r < SH and chenal[DY + r, DXH + q]:
             n_chenal += 1
             return ""
@@ -1209,6 +1231,8 @@ def main():
     print(f"{n_pos} positions d'objets décalées de ({DX_U:.3f}, {DZ_U:.3f}) u ; {n_retires} objets de WH1 retirés de la "
           f"bordure remplacée ; projet : {DST}")
     print(f"  fleuves navigables : {n_chenal} objets de WH1 retirés du chenal, {n_recales} recalés sur les berges abaissées")
+    print(f"  montagnes de bordure de WH1 surtout hors de la zone gardée, retirées : {n_montagnes_ret} "
+          f"(poses à retirer : {len(montagnes_wh1_expanded.pivots_retires())})")
     # (5.10.2026) les rubans d'eau de WH1 d'Expanded : copiés de la Saison, rognés sur le chenal, recalés sur les berges
     import rivieres_maillages_expanded
     rivieres_maillages_expanded.ecrire()
