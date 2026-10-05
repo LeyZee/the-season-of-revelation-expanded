@@ -42,7 +42,9 @@ ICI = os.path.join(ATELIER, r"04-projets\saison-expanded")
 CARTE_EXP = os.path.join(ICI, r"caime\saison_expanded_map\map.hex")
 SORTIE = os.path.join(ICI, "couches-expanded")
 ATLAS = os.path.join(ATELIER, r"05-journal\2026-09-23-extension-carte\travail")
-W, H, DX, DY, SW, SH, Y0 = 560, 825, 120, 250, 400, 440, 250
+# (3.10.2026 : 560 × 905, WH1 en (x + 120, y + 330), Voûtes dessous ; la ligne 0 de l'Atlas, y = −80, est la rangée Y0 =
+# 250, juste au-dessus de la bande du Bois Rêveur : cadre_expanded.py)
+from cadre_expanded import W, H, DX, DY, SW, SH, RANG_ATLAS as Y0          # noqa: E402
 TERRE_SAUVAGE, MER_SAUVAGE = "wh_dlc05_wilderness_land", "wh_dlc05_wilderness_sea"
 
 
@@ -62,7 +64,7 @@ def main():
     index = {n: i for i, n in enumerate(noms_exp)}
 
     def masque(entree):
-        """Cases de la grille d'Expanded (825 × 560, ligne 0 = sud) d'une entrée de la déclaration."""
+        """Cases de la grille d'Expanded (H × W, ligne 0 = sud) d'une entrée de la déclaration."""
         g = entree["grille"]
         m = grilles[g["fichier"]][g["couche"]] == g["valeur"]
         out = np.zeros((H, W), bool)
@@ -133,6 +135,53 @@ def main():
         n = int((reg < 0).sum())
         reg = np.where(reg < 0, valeur[lab], reg)
         print(f"  {n} case(s) restante(s) confiée(s) à la région voisine")
+    # ENCLAVES HORS JEU (3.10.2026, repérée par Charles : une « province sans nom » entre Couronne, les Marches, les Sœurs
+    # Pâles, Gisoreux et l'Artois ; diagnostic de la session « Extension ») : la bande de terre sauvage du bord nord de la
+    # carte de WH1, posée pour fermer la mini-campagne, s'est retrouvée enfermée entre les régions de l'Atlas (922 cases).
+    # Toute enclave de terre sauvage qui ne touche ni le bord de la carte, ni la mer, ni une autre terre sauvage, et dont
+    # tous les voisins sont des régions de terre, est répartie entre ces voisines, à la plus proche (parcours en largeur
+    # depuis elles). Les îlots entourés de mer restent hors jeu. Même règle dans la minicarte (session « Extension »).
+    from collections import deque
+    from grow_town_slots import components, neighbours
+    ts = index[TERRE_SAUVAGE]
+    regions_mer = set(range(len(dst.get("Land regions", [])), len(noms_exp)))
+    ids, n_c = components((reg == ts) & terre, W, H)
+    reparties = []
+    enclaves = np.zeros((H, W), bool)          # pour villes_expanded : la haute montagne d'une enclave reste fermée
+    for k in range(n_c):
+        cases = np.argwhere(ids == k)
+        if (cases[:, 0].min() == 0) or (cases[:, 1].min() == 0) or (cases[:, 0].max() == H - 1) or (cases[:, 1].max() == W - 1):
+            continue
+        dans = {(int(r), int(q)) for r, q in cases}
+        voisins = {}
+        ok = True
+        for r, q in dans:
+            for nq, nr in neighbours(q, r, W, H):
+                if (nr, nq) in dans:
+                    continue
+                v = int(reg[nr, nq])
+                if v == ts or v in regions_mer or not terre[nr, nq]:
+                    ok = False
+                    break
+                voisins[(nr, nq)] = v
+            if not ok:
+                break
+        if not ok or not voisins:
+            continue
+        file_ = deque(voisins.items())
+        vu = dict(voisins)
+        while file_:
+            (r, q), v = file_.popleft()
+            for nq, nr in neighbours(q, r, W, H):
+                if (nr, nq) in dans and (nr, nq) not in vu:
+                    vu[(nr, nq)] = v
+                    reg[nr, nq] = v
+                    file_.append(((nr, nq), v))
+        enclaves[cases[:, 0], cases[:, 1]] = True
+        reparties.append(f"{len(dans)} cases (rangées {cases[:, 0].min()}-{cases[:, 0].max()}) -> "
+                         + ", ".join(sorted({noms_exp[v] for v in voisins.values()})))
+    print(f"  enclaves de terre sauvage réparties entre leurs voisines : {reparties or 'aucune'}")
+    np.save(os.path.join(SORTIE, "enclaves.npy"), enclaves)
     # la clé de WH1 remplacée ne doit plus rester nulle part
     for t in d.get("regions_wh1_touchees", []):
         if t.get("dans_expanded") == 0 and t["cle_jeu"] in index:

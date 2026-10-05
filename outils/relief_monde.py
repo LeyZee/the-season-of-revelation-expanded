@@ -36,8 +36,8 @@ KIT = r"C:\Program Files (x86)\Steam\steamapps\common\Total War WARHAMMER III\as
 PROJET_SAISON = os.path.join(KIT, r"raw_data\terrain\campaigns\wh_dlc05_wood_elves_map_1")
 ICI = os.path.join(ATELIER, r"04-projets\saison-expanded")
 CAIME = os.path.join(ATELIER, r"01-outils\CampaignMapToolkit\CAIME\bin\Debug\CAIME.exe")
-W, H = 560, 825
-DX, DY_HAUT = 120, 825 - 250 - 440                 # colonnes à gauche, rangées au-dessus de la Saison (nord)
+# (3.10.2026, les Voûtes : 560 × 905, 135 rangées au-dessus de la Saison comme avant ; cadre_expanded.py)
+from cadre_expanded import W, H, DX, DY_HAUT, NH_ATLAS, VOILE, REFLET_PX      # noqa: E402
 RACCORD_HEX = 6
 CARTE_SAISON_HEX = os.path.join(KIT, r"raw_data\EmpireDesignData\campaign_maps\wh_dlc05_wood_elves_map_1\map.hex")
 COUCHES_SAISON = os.path.join(ATELIER, r"04-projets\saison-des-revelations\couches-slots")
@@ -59,7 +59,7 @@ def main():
     px = a.px
     LW, LH = W * px, H * px
     monde = np.full((LH, LW), -0.25, np.float32)                  # bande du sud : basse, sous la brume
-    # l'Atlas (575 rangées, nord en haut) occupe les rangées 0..575 du haut
+    # l'Atlas (NH_ATLAS rangées, nord en haut ; 655 depuis les Voûtes) occupe les rangées du haut
     ha, _ = relief_atlas.relief(px, 7, 1.0)
     monde[:ha.shape[0], :ha.shape[1]] = ha
     # la Saison : height du projet Terry (3524 × 3200, 8 px par hex, nord en haut), ramenée à px par hex
@@ -94,16 +94,16 @@ def main():
     bloc = np.repeat(np.repeat(al[::-1], px, 0), px, 1)            # nord en haut
     m_src[y0:y0 + 440 * px, x0:x0 + 400 * px] = bloc
     rangs = np.arange(LH)
-    cible = 1142 * px - 1 - rangs                                   # rangée cible de chaque rangée source
+    cible = REFLET_PX * px - 1 - rangs                              # rangée cible de chaque rangée source (1142 avant)
     ok = (cible >= 0) & (cible < LH)
     miroir = np.zeros((LH, LW), bool)
     miroir[cible[ok]] = m_src[rangs[ok]]
     monde_m = monde.copy()
     monde_m[cible[ok]] = monde[rangs[ok]]
     voile = np.zeros((LH, LW), bool)
-    voile[575 * px:601 * px] = True
+    voile[NH_ATLAS * px:(NH_ATLAS + VOILE) * px] = True
     ether = np.zeros((LH, LW), bool)
-    ether[575 * px:] = True
+    ether[NH_ATLAS * px:] = True
     monde = np.where(miroir, monde_m, np.where(voile, 0.4, np.where(ether, -0.4, monde))).astype(np.float32)
     print(f"  Bois des Rêves : {len(ids_al)} régions d'Athel Loren reflétées ({int(al.sum())} hex)")
     os.makedirs(os.path.join(ICI, "relief"), exist_ok=True)
@@ -139,9 +139,9 @@ def main():
     dr.rectangle((x0, y0, x0 + 400 * px, y0 + 440 * px), outline=(240, 200, 60), width=3)
     dr.text((x0 + 8, y0 + 6), "La Saison (relief réel de WH1)", font=f, fill=(250, 215, 90), stroke_width=2,
             stroke_fill=(0, 0, 0))
-    dr.text((x0 + 8, (575 + 30) * px), "Le Bois des Rêves (reflet d'Athel Loren, en miroir)", font=f,
+    dr.text((x0 + 8, (NH_ATLAS + 30) * px), "Le Bois des Rêves (reflet d'Athel Loren, en miroir)", font=f,
             fill=(225, 190, 245), stroke_width=2, stroke_fill=(20, 0, 30))
-    dr.text((x0 + 8, 577 * px), "voile de brume", font=f, fill=(60, 50, 80))
+    dr.text((x0 + 8, (NH_ATLAS + 2) * px), "voile de brume", font=f, fill=(60, 50, 80))
     sortie = os.path.join(ICI, "captures-article", f"05_relief_monde_{px}px.jpg")
     img.save(sortie, quality=90)
     print(f"monde {monde.shape}, min {monde.min():.2f}, max {monde.max():.2f} ; Saison {s.min():.2f}..{s.max():.2f} ; "

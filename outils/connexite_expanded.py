@@ -34,6 +34,25 @@ def main():
           f"hors de la principale : {len(hors)}")
     for h in hors:
         print("   ", h)
+    # (3.10.2026, Golfe du Bidouze fermé par la lisière de WH1, relevé de la session des rivières navigables) la MER
+    # seule : un navire ne passe que par la mer franchissable ; chaque port doit toucher la composante de mer principale
+    from grow_town_slots import neighbours
+    gt = lire("groundtypes")
+    mer = (gt >= len(listes.get("Land ground types", []))) & (imp == 1)
+    ids_m, n_m = components(mer, W, H)
+    t_m = np.bincount(ids_m[ids_m >= 0])
+    mp = int(np.argmax(t_m))
+    fermes = []
+    for r, q in np.argwhere(slots == 1):
+        comps = {int(ids_m[nr, nq]) for nq, nr in neighbours(int(q), int(r), W, H) if ids_m[nr, nq] >= 0}
+        if int(ids_m[r, q]) >= 0:
+            comps.add(int(ids_m[r, q]))
+        if mp not in comps:
+            fermes.append(f"{noms[int(reg[r, q])]} ({q}, {r})")
+    print(f"mer franchissable : {n_m} composantes ; principale : {t_m[mp]} hex ; ports hors de la principale : "
+          f"{len(fermes)}")
+    for h in fermes:
+        print("   ", h)
     if not hors or "--corriger" not in sys.argv:
         return 1 if hors else 0
     # --corriger : le plus court passage (hex infranchissables à ouvrir) de chaque colonie isolée vers la composante

@@ -46,8 +46,10 @@ def main():
     img[bord] = (40, 30, 25)
     out = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8))
     d = ImageDraw.Draw(out)
+    # (3.10.2026 : la carte de WH1 en (x + 120, y + 330) depuis les Voûtes ; cadre_expanded.py)
+    from cadre_expanded import DX, DY, SW, SH
     H = reg.shape[0]
-    d.rectangle((120 * F, (H - 690) * F, 520 * F, (H - 250) * F), outline=(240, 200, 60), width=3)
+    d.rectangle((DX * F, (H - DY - SH) * F, (DX + SW) * F, (H - DY) * F), outline=(240, 200, 60), width=3)
     f = ImageFont.truetype("georgia.ttf", 22)
     d.text((10, 8), f"Saison Expanded : {len(noms)} régions (cadre or = carte de WH1)", font=f, fill=(255, 255, 255),
            stroke_width=2, stroke_fill=(0, 0, 0))

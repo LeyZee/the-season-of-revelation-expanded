@@ -1,7 +1,11 @@
 # Saison Expanded : plan de travail (construction, 25.09.2026 vers 15 h 45)
 
+> **Plan du 25.09.2026, gardé pour l'historique.** L'état réel est dans `JOURNAL.md` (le plus récent en bas) et
+> `CLAUDE.md` § 4 : grille 560 × 905 avec les Voûtes, WH1 en (x + 120, y + 330), déclarations, kit et pack d'essai
+> faits ; la campagne a chargé le 4.10.2026. Les cases cochées ci-dessous le disent phase par phase.
+
 Sources : inventaire de l'Atlas (agent, 15 h 30 ; résumé dans `README.md`) et inventaire de la chaîne (agent, 15 h 45 ;
-résumé ci-dessous). Rien n'a encore été écrit hors de ce dossier.
+résumé ci-dessous). (Le 25.09 à 15 h 45, rien n'était encore écrit hors de ce dossier.)
 
 ## Ce que l'inventaire de la chaîne a trouvé
 
@@ -42,7 +46,8 @@ résumé ci-dessous). Rien n'a encore été écrit hors de ce dossier.
 1. **Configuration par carte** (1 à 2 jours) : module commun, `CARTE_SOURCE` / `CARTE`, sorties par projet ; contrôle :
    la chaîne de la bêta produit les MÊMES fichiers qu'avant (comparaison octet par octet du compilé).
 2. **Grille agrandie** (1 jour) : map.hex 560 × 575 par CAIME, couches de la Saison recopiées décalées, régions de
-   l'extension déclarées hors jeu et infranchissables ; zone jouable = la Saison.
+   l'extension déclarées hors jeu et infranchissables ; zone jouable = la Saison. **[Fait, puis refait : 560 × 905 avec
+   les Voûtes, WH1 en (x + 120, y + 330), zone jouable = le monde entier, régions de l'Atlas jouables (3.10).]**
 3. **Terrain de l'extension** (2 à 3 jours) : relief, sols, forêts, rivières, côtes, montagnes depuis l'Atlas ; le
    Miroir d'Athel Loren ; contrôle dans Terry puis décodage du compilé.
    **Couche infranchissable d'Expanded** (session « Extension », 25.09.2026, 18 h ; l'Atlas dessine les passages ainsi) :
@@ -52,7 +57,8 @@ résumé ci-dessous). Rien n'a encore été écrit hors de ce dossier.
    des Pins), Orques de fer vers la Gasconnie. Sans elles, ces cinq accès manquent en jeu. Les cols de l'extension sont
    déjà creusés dans `alt` (vallées de 4 à 5 hex) : le relief modelé depuis `alt` les reprend.
    **Décors 3D des lieux** : `travail\lieux_frontiere.json` (32 lieux sourcés de la frontière Empire–Bretonnie et des
-   Terres Désolées ; hex dans le repère de la Saison, + (120, 250) pour Expanded ; certitude A/B/C, priorité 1 à 3).
+   Terres Désolées ; hex dans le repère de la Saison, + (120, 330) pour Expanded depuis les Voûtes (3.10 ; + (120, 250)
+   avant) ; certitude A/B/C, priorité 1 à 3).
    Priorité 1 (9) : mur de Helmgart, route de l'Amitié, Helspire, Corridor tortueux, temple du Loup gris, comptoir
    d'Azgaraz, Tallerhof, Schlüsselschloss, ruines du Grauesland. Deuxième liste (points d'intérêt de toute la carte,
    champ `decor_3d`) à venir. Modèles : ceux de CA qui existent, choisis par nous.
@@ -68,9 +74,10 @@ dépend pas de la carte. Donc : (1) une région de WH1 ne change JAMAIS de provi
 elle est remplacée par une « reprise » à clé `saison_` (Fort Solstice -> `saison_glanborielle_fort_solstice`, capitale de
 Glanborielle, voie (a) confirmée) ; (2) dix régions neuves entrent dans des provinces de WH1 : sans effet sur la bêta
 (`build_pack` ne prend que les jonctions de régions `wh_dlc05_`), mais **le pack d'Expanded et celui de la Saison ne
-doivent pas être actifs ensemble** (à dire sur les deux pages et à contrôler par script au lancement).
+doivent pas être actifs ensemble** (à dire sur les deux pages et à contrôler par script au lancement : **OUVERT**, aucun
+script de campagne d'Expanded n'existe encore, `build_pack.py`).
 Déclaration faite le 25.09 à 19 h 14 (préavis 19 h 09) : 75 régions, 21 provinces, 64 colonies ; sauvegarde
-`05-journal\db-backups\20260925-191420`.
+`05-journal\db-backups\20260925-191420`. (Depuis le 3.10 : + 3 provinces et + 10 régions des Voûtes ; 131 colonies.)
 
 2 bis. **Régions neuves** (après la déclaration du 25.09 à 18 h 08, qui ne porte que les 61 régions de WH1) : source
    `travail\extension_regions.json` (32 régions, 11 mers avec `cle_proposee`, 15 provinces, 14 **découpes** de régions de
@@ -82,6 +89,7 @@ Déclaration faite le 25.09 à 19 h 14 (préavis 19 h 09) : 75 régions, 21 prov
    `sync-names` CAIME -> contrôle (chaque hex terrestre a une région, couleurs uniques). Aucune faction neuve dans le kit
    sans essai de démarrage (erreur 107).
 4. **Campagne Expanded** : clé de campagne, startpos, pack `saison_expanded.pack` chargé SEUL ; premier essai en jeu.
+   **[Fait : la campagne charge, Orion au tour 1, 4.10.2026 vers 20 h 40 ; démarrage de référence SANS fleuves.]**
 
 ## Compatibilité avec les autres mods de carte (Charles, 25.09.2026 : « que tout cohabite », « attaque tout ça aussi »)
 
@@ -92,7 +100,11 @@ Audit : `05-journal\2026-09-25-audits\compatibilite-autres-mods.md`. Pour la bê
    lignes seulement au startpos ?) ;
 3. 686 fichiers de WH1 à des chemins de style CA : les ranger sous un dossier à nous (`fichiers_wh1`, chaîne, pack).
 
-## Extension future (idée de la communauté, notée avec l'accord de Charles, 25.09.2026, 20 h 20)
+## Les Voûtes (idée de la communauté, 25.09.2026, 20 h 20)
+
+**DÉCISION DE CHARLES (25.09.2026, 20 h 30) : les Voûtes ENTRENT dans Expanded et dans l'Atlas, Kemmler y part.**
+**[Fait : grille 560 × 905, Voûtes entre la Saison et le Bois Rêveur, Kemmler à Krinal, 3.10.2026.]** Historique de la
+réflexion ci-dessous.
 
 - **Les Voûtes (The Vaults)** : un moddeur du Discord propose d'ajouter les Voûtes (pour y jouer Kemmler, déjà jouable
   avec Krell). Conflit avec la bande du Bois Rêveur au sud (décision de Charles : miroir d'Athel Loren derrière le voile)
@@ -126,6 +138,11 @@ Audit : `05-journal\2026-09-25-audits\compatibilite-autres-mods.md`. Pour la bê
   d'Athel Loren où rôdent les démons de Slaanesh, Wood Elves 8e éd. p. 12) : forêt reconnaissable, teintée et corrompue ;
   textures de Slaanesh en taches, plus denses au cœur et aux portes ; modèles en petits groupes ; failles aux portes ;
   voile de brume. Phase 3.
+  **[Fait en grande partie le 4.10.2026, Charles : « que ce miroir soit vraiment le royaume de Slaanesh » ; JOURNAL] :**
+  sol du royaume de CA (chaos_relm_slaanesh0..3), couleur grise neutre de CA, arbres sur les variantes de Slaanesh de CA,
+  décors du royaume de CA (2 309 entités vérifiées à l'emprise), Montures de Slaanesh et brume pourpre de CA ; ambiance
+  de Slaanesh de CA (5 cylindres) préparée, accord de Charles, branchée éteinte par la Construction. Restent : failles
+  aux portes.
 - **Bordures démoniaques du Bois Rêveur et du voile** (Charles, 25.09.2026 vers 17 h 40 : « des effets un peu
   démoniaques sur les contours du miroir… et la séparation qui longe les montagnes ») ; relevé
   `scratchpad\chercher_effets_chaos.py` (packs de CA) :
@@ -133,7 +150,9 @@ Audit : `05-journal\2026-09-25-audits\compatibilite-autres-mods.md`. Pour la bê
     modèles `fx_campaign_rift_base_*`, en chapelet ; décor de Slaanesh (tentacules, cornes, barbelés) en petits groupes ;
   - le voile (le long des Voûtes) : déchirure du Grand Vortex `campaign_wh3_vortex_tear_main.wsmodel` répétée ;
     colonnes et rayons `campaign_vortex_pillar_*`, `campaign_vortex_beam_*`, `campaign_vortex_helix_01` ; maelströms
-    `campaign_maelstorm_base{,_02,_03}` ; nuages et brume teintés ;
+    `campaign_maelstorm_base{,_02,_03}` ; ~~nuages et brume teintés~~ (ÉTAT RÉEL : depuis le 3.10 le voile est une
+    déchirure, tout en éther, SANS brume ; « bande rose en frontière » refusée par Charles le 3.10 ; mémoire « Éther du
+    Bois Rêveur ») ;
   - portes saisonnières : `rigidmodels/campaign/chaos/chs_gate_01`, `chs_portal_01` (animé), sphère
     `campaign_teleport_portal_sphere*`, faille de Slaanesh au-dessus.
   Précautions : peu d'effets, bien placés (images par seconde) ; chaque effet essayé SEUL en jeu avant d'être gardé

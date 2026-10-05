@@ -19,12 +19,12 @@ It is **built in public**: every step is logged in the [journal](docs/fr/JOURNAL
 
 | | |
 |---|---|
-| **Grid** | 560 × 825 hexes. Warhammer I's map is placed at (+120, +250), and the offset is even, as CAIME requires. |
-| **Centre** | Warhammer I's terrain kept (relief, props, trees, water); provinces and three coastline seams follow the Atlas. It stays the playable area for now. |
+| **Grid** | 560 × 905 hexes. Warhammer I's map is placed at (+120, +330), and the offset is even, as CAIME requires. |
+| **Centre** | Warhammer I's terrain kept (relief, props, trees, water); provinces and three coastline seams follow the Atlas. The playable area now covers the whole map: 131 settlements on one walkable landmass. |
 | **Around** | New land from the Atlas: relief modelled from its heights, soils, forests, rivers and coasts, joined smoothly to Warhammer I's relief. |
 | **The Dreaming Wood** | A mirrored reflection of Athel Loren in a sea of aether, south of the forest. |
 | **Keys** | Map `saison_expanded_map`, campaign `saison_expanded`, new regions `saison_…`. The beta's keys are never reused. |
-| **Status** | Work in progress, not playable yet: grid, regions, towns and minimap done; terrain of the extension under way (relief, rivers, the Dreaming Wood). See [PLAN](docs/fr/PLAN.md). Collaboration is open: issues, pull requests, and the Discord linked from [bretonia.dev](https://bretonia.dev). |
+| **Status** | Work in progress, a test build only: the campaign loads in game and gets through its first turn. Grid, regions, towns, factions, starting positions and terrain are in; there are no campaign scripts yet, and coasts, cliffs and river mouths are still being polished (navigable rivers are next). See [PLAN](docs/fr/PLAN.md). Collaboration is open: issues, pull requests, and the Discord linked from [bretonia.dev](https://bretonia.dev). |
 
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 

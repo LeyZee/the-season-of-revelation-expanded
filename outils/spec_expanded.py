@@ -4,7 +4,8 @@ spec_expanded.py - fiche de déclaration d'Expanded (phase 2), tirée de celle d
 
 Sortie : `04-projets/saison-expanded/map_spec_expanded.json`, lue par `02-scripts/declare_map.py` (rien n'est écrit dans
 le kit ici). Principes (25.09.2026) :
-- carte `saison_expanded_map` (560 × 825 hex), campagne `saison_expanded` ; clés neuves `saison_` (règle de Charles) ;
+- carte `saison_expanded_map` (560 × 905 hex depuis les Voûtes, 3.10.2026 ; 560 × 825 avant), campagne
+  `saison_expanded` ; clés neuves `saison_` (règle de Charles) ;
 - les 61 régions de WH1 gardent leurs clés `wh_dlc05_` (contenu de WH1) : `campaign_map_regions` les relie à la nouvelle
   carte, et les scripts de la Saison, qui les nomment, restent valables ; les lignes `regions`, `provinces`, jonctions
   et colonies existent déjà (declare_map les laisse telles quelles) ;
@@ -43,7 +44,8 @@ def main():
     spec = {
         "_commentaire": "Fiche générée par 04-projets/saison-expanded/outils/spec_expanded.py depuis la fiche de la "
                         "Saison. Régions de WH1 partagées (clés wh_dlc05_), carte, campagne, zone et routes à nous.",
-        "map": dict(s["map"], name=cc.CARTE, maxx=560, maxy=825),
+        # (3.10.2026 : 560 × 905 depuis les Voûtes ; carte_config, profil « expanded »)
+        "map": dict(s["map"], name=cc.CARTE, maxx=cc.HEX_L, maxy=cc.HEX_H),
         "campaign": dict(s["campaign"], name=cc.CAMPAGNE, onscreen="The Season of Revelation: Expanded",
                          description="Bretonnia, from the Grey Mountains to the Sea of Claws",
                          script_path=f"script/campaign/{cc.CAMPAGNE}"),
@@ -54,8 +56,12 @@ def main():
         "areas_of_interest": [],
         "settlements": s["settlements"],
     }
-    if "--lot2" in sys.argv:
+    # (3.10.2026 : l'Atlas par défaut ; lancée sans --lot2, la fiche était sortie sans ses 86 régions et avait remplacé
+    # la bonne. --lot2 reste accepté ; --sans-atlas redonne la fiche de la seule Saison décalée)
+    if "--sans-atlas" not in sys.argv:
         lot2(spec)
+        if "--sans-fleuves" not in sys.argv:
+            lot_fleuves(spec)
     json.dump(spec, open(SORTIE, "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=1)
     print(f"{SORTIE}\n  carte {spec['map']}\n  zone x {pa['minx']}-{pa['maxx']}, z {pa['miny']}-{pa['maxy']}"
           f"\n  routes {[r['key'] for r in spec['roads']]}\n  régions {len(spec['regions'])}, provinces {len(spec['provinces'])}")
@@ -140,6 +146,38 @@ def lot2(spec):
     orph = sorted({r["province"] for r in spec["regions"] if r.get("province") and r["province"] not in provs})
     print(f"  lot 2 : {len(neuves)} régions ({len(terrestres)} terrestres), {len(d['provinces_neuves'])} provinces ; "
           f"provinces citées non déclarées : {orph or 'aucune'}")
+
+
+# LES FLEUVES NAVIGABLES (v3 validée par Charles, Expanded seulement : `04-projets\banc-fleuve\DONNEES-A-DECLARER.md` § 1,
+# `RAPPORT_v3.md`) : 7 régions d'eau, DANS CET ORDRE (CAIME numérote les régions dans l'ordre de déclaration : indices 146 à
+# 152 après les 146 régions d'Expanded ; `creuser_fleuve` les attend ainsi). Pas de province, de colonie ni de climat pour
+# une région d'eau ; une couleur propre chacune, comme les mers d'Expanded. Plusieurs segments portent le même nom
+# (comme chez ChaosRobie et CA) ; « Ois » n'est pas sourcé : la branche s'appelle « Grismerie ».
+FLEUVES = (("saison_sea_brienne_2", "River Brienne"), ("saison_sea_brienne_1", "River Brienne"),
+           ("saison_sea_grismerie_3", "River Grismerie"), ("saison_sea_grismerie_2", "River Grismerie"),
+           ("saison_sea_grismerie_1", "River Grismerie"), ("saison_sea_grismerie_4", "River Grismerie"),
+           ("saison_sea_sannez_1", "River Sannez"))
+
+
+def lot_fleuves(spec):
+    import re
+    t = open(os.path.join(KIT_DB, "regions.xml"), encoding="utf-8", errors="replace").read()
+    kit_rgb = {}
+    for bloc in re.findall(r"<regions[ >](.*?)</regions>", t, re.S):
+        k = re.search(r"<key>(.*?)</key>", bloc).group(1)
+        kit_rgb[k] = tuple(int(re.search(f"<{c}>(\\d+)</{c}>", bloc).group(1)) for c in "rgb")
+    prises = [tuple(r["rgb"]) for r in spec["regions"]] + [c for k, c in kit_rgb.items() if k.startswith("saison_")]
+    a_tirer = [k for k, _ in FLEUVES if kit_rgb.get(k, (0, 0, 0)) == (0, 0, 0)]
+    tirees = dict(zip(a_tirer, couleurs_ecartees(len(a_tirer), prises, graine=31)))
+    for k, nom in FLEUVES:
+        spec["regions"].append({"key": k, "onscreen": nom, "battle_name": nom, "in_encyclopedia": 0, "is_sea": 1,
+                                "rgb": list(tirees.get(k) or kit_rgb[k])})
+    cles = [r["key"] for r in spec["regions"]]
+    assert len(cles) == len(set(cles)), "clé de région en double"
+    toutes = [tuple(r["rgb"]) for r in spec["regions"]]
+    assert len(toutes) == len(set(toutes)), "couleur de région en double (mers comprises)"
+    print(f"  fleuves navigables : {len(FLEUVES)} régions d'eau, rangs {len(spec['regions']) - len(FLEUVES)} à "
+          f"{len(spec['regions']) - 1} de la fiche")
 
 
 def verifier(spec):

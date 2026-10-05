@@ -2,14 +2,15 @@
 """
 grille_expanded.py - la grille hex de Saison Expanded dans CAIME (phase 2), dans le bac à sable du chantier.
 
-Pourquoi (25.09.2026, Charles : « attaque la phase 2 aujourd'hui ») : la carte agrandie (560 × 825 hex, `carte_config`
-profil « expanded ») a besoin de sa grille CAIME : la Saison au centre, telle quelle, et la terre de l'extension autour,
-hors jeu et infranchissable (première étape : décor), d'après l'Atlas (source unique ; session « Extension »).
+Pourquoi (25.09.2026, Charles : « attaque la phase 2 aujourd'hui ») : la carte agrandie (560 × 905 hex depuis les Voûtes,
+3.10.2026 ; `carte_config` profil « expanded », `cadre_expanded.py`) a besoin de sa grille CAIME : la Saison au centre,
+telle quelle, et la terre de l'extension autour, hors jeu et infranchissable (première étape : décor), d'après l'Atlas
+(source unique ; session « Extension »).
 
 Ce que fait le script (rien dans le kit : la carte vit dans `04-projets\\saison-expanded\\caime\\`) :
 1. lit les couches de la Saison (`04-projets\\saison-des-revelations\\couches-slots\\`, 400 × 440, indices du map.hex de
    la Saison) et les renumérote par NOM vers les listes de la carte Expanded (CAIME `info --names`) ;
-2. les pose dans la grille 560 × 825 au décalage (x + 120, y + 250) (ligne 0 = sud, comme CAIME et l'Atlas) ;
+2. les pose dans la grille 560 × 905 au décalage (x + 120, y + 330) (ligne 0 = sud, comme CAIME et l'Atlas) ;
 3. hors du cadre de la Saison : types de sol de l'Atlas (`extension_regions.npz`, `biome` = index CAIME à plat, terre
    puis mer), rivières de l'Atlas, tout infranchissable ; la bande du sud (Bois des Rêves) reste vide en attendant les
    grilles de la session « Extension » ;
@@ -41,10 +42,9 @@ ICI = os.path.join(ATELIER, r"04-projets\saison-expanded")
 CARTE_EXP = os.path.join(ICI, r"caime\saison_expanded_map\map.hex")
 SORTIE = os.path.join(ICI, "couches-expanded")
 ATLAS = os.path.join(ATELIER, r"05-journal\2026-09-23-extension-carte\travail")
-W, H = 560, 825
-DX, DY = 120, 250                  # place de la Saison (400 × 440) dans la grille
-SW, SH = 400, 440
-Y0_ATLAS = 250                     # la ligne 0 de l'Atlas (y = 0) est la ligne 250 de la grille
+# (3.10.2026 : 560 × 905, la Saison en (x + 120, y + 330), sous elle les Voûtes ; cadre_expanded.py)
+from cadre_expanded import W, H, DX, DY, SW, SH, RANG_ATLAS as Y0_ATLAS     # noqa: E402
+# (la ligne 0 de l'Atlas, y = −80 depuis les Voûtes, est la rangée Y0_ATLAS de la grille)
 COUCHES = ("GroundTypes", "Climates", "Attritions", "Impassable", "Rivers", "Roads", "Beaches", "Bridges")
 
 
@@ -58,7 +58,8 @@ def main():
     assert (sw, sh) == (SW, SH) and (dw, dh) == (W, H), ((sw, sh), (dw, dh))
     g = np.load(os.path.join(ATLAS, "extension_geo.npz"))
     r = np.load(os.path.join(ATLAS, "extension_regions.npz"))
-    ha, wa = r["biome"].shape                                      # 575, 560 ; ligne 0 = y 0 (sud), colonne = x + 120
+    ha, wa = r["biome"].shape                                      # 655, 560 ; ligne 0 = y −80 (sud), colonne = x + 120
+    assert ha == H - Y0_ATLAS, f"grilles de l'Atlas : {ha} rangées, {H - Y0_ATLAS} attendues"
     cadre = np.zeros((H, W), bool)
     cadre[DY:DY + SH, DX:DX + SW] = True
     atlas = np.zeros((H, W), bool)
@@ -90,8 +91,13 @@ def main():
     biome = np.full((H, W), -1, np.int64)
     biome[Y0_ATLAS:Y0_ATLAS + ha, :wa] = r["biome"].astype(np.int64)
     couches["GroundTypes"] = np.where(hors, biome, couches["GroundTypes"])
-    riv = np.zeros((H, W), np.int64)
-    riv[Y0_ATLAS:Y0_ATLAS + ha, :wa] = g["riv_ext"].astype(np.int64)
+    # (3.10.2026) rivières de l'extension : celles de la carte de l'Atlas, raccordées et lissées, comme la minicarte
+    # (`rivieres_svg_grille.py`) ; `riv_ext`, relevé brut en escaliers, faisait au Reikland un maillage si dense
+    # qu'Ubersreik ne passait plus la validation
+    import rivieres_svg_grille                                                  # noqa: E402
+    riv = rivieres_svg_grille.cases().astype(np.int64)
+    print(f"  rivières de l'extension (carte de l'Atlas) : {int(riv.sum())} cases ; riv_ext en avait "
+          f"{int(g['riv_ext'].sum())}")
     couches["Rivers"] = np.where(hors, riv, couches["Rivers"])
     couches["Impassable"] = np.where(cadre, couches["Impassable"], 0)      # 1 = franchissable ; hors Saison : non
     for nom in ("Roads", "Beaches", "Bridges"):

@@ -5,7 +5,7 @@
   "minx": 0,
   "miny": 0,
   "maxx": 560,
-  "maxy": 825,
+  "maxy": 905,
   "game_expansion_key": "warhammer3"
  },
  "campaign": {
@@ -175,11 +175,23 @@
   },
   {
    "key": "saison_province_glanborielle",
-   "onscreen": "Glanborielle"
+   "onscreen": "Marches of Glanborielle"
   },
   {
    "key": "saison_province_pre_de_ceren",
    "onscreen": "Ceren Field"
+  },
+  {
+   "key": "saison_province_voutes",
+   "onscreen": "The Vaults"
+  },
+  {
+   "key": "saison_province_voutes_nord",
+   "onscreen": "Northern Vaults"
+  },
+  {
+   "key": "saison_province_voutes_ouest",
+   "onscreen": "Western Vaults"
   },
   {
    "key": "saison_province_reves_ete",
@@ -1431,6 +1443,146 @@
    "is_capital": 1
   },
   {
+   "key": "saison_voutes_karak_izor",
+   "onscreen": "Karak Izor",
+   "battle_name": "Karak Izor",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    165,
+    80,
+    220
+   ],
+   "province": "saison_province_voutes",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_voutes_karak_bhufdar",
+   "onscreen": "Karak Bhufdar",
+   "battle_name": "Karak Bhufdar",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    200,
+    225,
+    180
+   ],
+   "province": "saison_province_voutes_nord",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_krinal",
+   "onscreen": "Krinal",
+   "battle_name": "Krinal",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    225,
+    245,
+    55
+   ],
+   "province": "saison_province_voutes_ouest",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_voutes_karak_kaferkammaz",
+   "onscreen": "Karak Kaferkammaz",
+   "battle_name": "Karak Kaferkammaz",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    120,
+    100,
+    245
+   ],
+   "province": "saison_province_voutes_nord",
+   "is_capital": 1
+  },
+  {
+   "key": "saison_voutes_stonewrath",
+   "onscreen": "Tombs of Stonewrath",
+   "battle_name": "Tombs of Stonewrath",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    45,
+    30,
+    160
+   ],
+   "province": "saison_province_voutes_nord",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_karag_dar",
+   "onscreen": "Karag-Dar",
+   "battle_name": "Karag-Dar",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    125,
+    235,
+    60
+   ],
+   "province": "saison_province_voutes_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_karak_eksfilaz",
+   "onscreen": "Karak Eksfilaz",
+   "battle_name": "Karak Eksfilaz",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    70,
+    185,
+    180
+   ],
+   "province": "saison_province_voutes_ouest",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_karak_grom",
+   "onscreen": "Karak Grom",
+   "battle_name": "Karak Grom",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    230,
+    140,
+    215
+   ],
+   "province": "saison_province_voutes",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_brise_nuques",
+   "onscreen": "Necksnappers' Lair",
+   "battle_name": "Necksnappers' Lair",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    190,
+    185,
+    105
+   ],
+   "province": "saison_province_voutes",
+   "is_capital": 0
+  },
+  {
+   "key": "saison_voutes_gutrippaz",
+   "onscreen": "Gutrippaz' Lair",
+   "battle_name": "Gutrippaz' Lair",
+   "in_encyclopedia": 1,
+   "is_sea": 0,
+   "rgb": [
+    65,
+    90,
+    20
+   ],
+   "province": "saison_province_voutes",
+   "is_capital": 0
+  },
+  {
    "key": "saison_aquitaine_aquitanie",
    "onscreen": "Aquitaine",
    "battle_name": "Aquitaine",
@@ -1707,9 +1859,9 @@
    "in_encyclopedia": 1,
    "is_sea": 1,
    "rgb": [
-    230,
-    120,
-    200
+    145,
+    25,
+    70
    ]
   },
   {
@@ -1719,9 +1871,9 @@
    "in_encyclopedia": 1,
    "is_sea": 1,
    "rgb": [
-    245,
-    170,
-    205
+    90,
+    35,
+    190
    ]
   },
   {
@@ -1731,9 +1883,9 @@
    "in_encyclopedia": 1,
    "is_sea": 1,
    "rgb": [
-    185,
-    80,
-    205
+    25,
+    140,
+    175
    ]
   },
   {
@@ -1743,9 +1895,9 @@
    "in_encyclopedia": 1,
    "is_sea": 1,
    "rgb": [
-    145,
-    25,
-    70
+    80,
+    165,
+    110
    ]
   },
   {
@@ -1755,9 +1907,9 @@
    "in_encyclopedia": 1,
    "is_sea": 1,
    "rgb": [
-    90,
     35,
-    190
+    110,
+    50
    ]
   },
   {
@@ -1768,8 +1920,8 @@
    "is_sea": 1,
    "rgb": [
     25,
-    140,
-    175
+    65,
+    145
    ]
   },
   {
@@ -2023,6 +2175,90 @@
    ],
    "province": "saison_province_reves_hiver",
    "is_capital": 0
+  },
+  {
+   "key": "saison_sea_brienne_2",
+   "onscreen": "River Brienne",
+   "battle_name": "River Brienne",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    230,
+    35,
+    60
+   ]
+  },
+  {
+   "key": "saison_sea_brienne_1",
+   "onscreen": "River Brienne",
+   "battle_name": "River Brienne",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    185,
+    150,
+    85
+   ]
+  },
+  {
+   "key": "saison_sea_grismerie_3",
+   "onscreen": "River Grismerie",
+   "battle_name": "River Grismerie",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    80,
+    125,
+    225
+   ]
+  },
+  {
+   "key": "saison_sea_grismerie_2",
+   "onscreen": "River Grismerie",
+   "battle_name": "River Grismerie",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    90,
+    170,
+    30
+   ]
+  },
+  {
+   "key": "saison_sea_grismerie_1",
+   "onscreen": "River Grismerie",
+   "battle_name": "River Grismerie",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    215,
+    190,
+    235
+   ]
+  },
+  {
+   "key": "saison_sea_grismerie_4",
+   "onscreen": "River Grismerie",
+   "battle_name": "River Grismerie",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    245,
+    65,
+    170
+   ]
+  },
+  {
+   "key": "saison_sea_sannez_1",
+   "onscreen": "River Sannez",
+   "battle_name": "River Sannez",
+   "in_encyclopedia": 0,
+   "is_sea": 1,
+   "rgb": [
+    245,
+    215,
+    165
+   ]
   }
  ],
  "roads": [
@@ -2053,9 +2289,9 @@
   "onscreen": "The Season of Revelation: Expanded",
   "description": "The Wood Elves are, by their own reckoning, enjoying a period of relative calm. As life in the Old World carries on apace, the Asrai are rarely troubled by it. Incursions by the foolhardy have been dealt with; dazzling defeats inflicted, stunning victories won, and the forest roots nourished with the blood of trespassing outsiders. Now, something is coming back to terrorise the Athel Lorens woodland glades  something altogether more dangerous than mere Greenskin raiders or Bretonnian treasure hunters. The entire forest must fight now, for its very existence is under the gravest threat. Prepare your kindred, for this is the Season of Revelation!",
   "minx": 79.96,
-  "miny": 192.56,
+  "miny": 254.17,
   "maxx": 346.49,
-  "maxy": 531.46,
+  "maxy": 593.07,
   "stem": "saison_expanded",
   "meaningful_id": "main_rome_map",
   "map_file": "saison_expanded_map.png"
@@ -2426,6 +2662,46 @@
   {
    "region": "saison_ile_silencieuse",
    "climate_type": "climate_magicforest"
+  },
+  {
+   "region": "saison_voutes_karak_izor",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_karak_bhufdar",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_krinal",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_voutes_karak_kaferkammaz",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_stonewrath",
+   "climate_type": "climate_temperate"
+  },
+  {
+   "region": "saison_voutes_karag_dar",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_karak_eksfilaz",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_karak_grom",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_brise_nuques",
+   "climate_type": "climate_mountain"
+  },
+  {
+   "region": "saison_voutes_gutrippaz",
+   "climate_type": "climate_mountain"
   },
   {
    "region": "saison_aquitaine_aquitanie",

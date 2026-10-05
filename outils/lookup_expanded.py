@@ -8,9 +8,9 @@ d'une demi-rangée) est tramée en pixels, chaque pixel prenant l'hex dont le ce
 USAGE : la même trame appliquée à la grille de la Saison doit redonner l'image de correspondance que CAIME a calculée
 (`working_data\\...\\wh_dlc05_wood_elves_lookup.bmp`) : taux d'accord affiché ; en dessous de 98 %, rien n'est écrit.
 
-Sorties (`04-projets\\saison-expanded\\images-carte\\`) : `saison_expanded_lookup.tga` (2240 × 3810),
-`saison_expanded_lookup_minimap.tga` (quart), `saison_expanded_minimap.png` (parchemin de la session « Extension »,
-1120 × 1905), `controle_regions.png`.
+Sorties (`04-projets\\saison-expanded\\images-carte\\`) : `saison_expanded_lookup.tga` (2240 × 4180 depuis les Voûtes,
+3.10.2026 ; 2240 × 3810 avant), `saison_expanded_lookup_minimap.tga` (quart), `saison_expanded_minimap.png` (parchemin de
+`minicarte_parchemin.py`, au style de la Saison, 1120 × 2089), `controle_regions.png`.
 
 Usage :
     python lookup_expanded.py
@@ -33,8 +33,10 @@ CAIME = os.path.join(ATELIER, r"01-outils\CampaignMapToolkit\CAIME\bin\Debug\CAI
 KIT = r"C:\Program Files (x86)\Steam\steamapps\common\Total War WARHAMMER III\assembly_kit"
 ICI = os.path.join(ATELIER, r"04-projets\saison-expanded")
 SORTIE = os.path.join(ICI, "images-carte")
-PARCHEMIN = os.path.join(ATELIER, r"05-journal\2026-09-23-extension-carte\travail\minicarte_expanded",
-                         "saison_expanded_minimap_1120x1905.png")
+# (3.10.2026, après-midi : le parchemin au style de la Saison, `minicarte_parchemin.py`, provinces d'Expanded nommées ;
+# l'anglais pour le pack principal, le français `saison_expanded_minimap_fr.png` pour le pack de traduction, comme la
+# Saison. Avant : le rendu de l'Atlas, travail\minicarte_expanded.mjs, sans provinces)
+PARCHEMIN = os.path.join(ICI, "images-carte", "saison_expanded_minimap_en.png")
 PX_COL = 4.0
 
 
@@ -107,6 +109,11 @@ def main():
         print("  !! couleurs en double (mers pas encore recolorées ?) : rien n'est écrit")
         return 3
     LW, LH = int(W * PX_COL), int(round(H * 2032 / 440))
+    # (3.10.2026, Construction : « pour la Saison, le .tga a la taille du .bmp ») la taille de l'image de correspondance
+    # que CAIME a calculée pour Expanded, si elle existe : 2240 × 4180 (l'arrondi d'ici donnait 4179)
+    bmp = os.path.join(KIT, r"working_data\campaign_maps\saison_expanded_map\saison_expanded_lookup.bmp")
+    if os.path.exists(bmp):
+        LW, LH = Image.open(bmp).size
     idx = trame(grille, LW, LH, dec)
     # contours lissés, comme la Saison (preparer_minicarte.SIGMA_CONTOURS)
     meilleur = np.full(idx.shape, -1.0, np.float32)
@@ -129,7 +136,7 @@ def main():
     os.makedirs(SORTIE, exist_ok=True)
     pm.ecrit_tga_palette(os.path.join(SORTIE, "saison_expanded_lookup.tga"), ind, palette)
     pm.ecrit_tga_palette(os.path.join(SORTIE, "saison_expanded_lookup_minimap.tga"), ind[::4, ::4], palette)
-    # la minicarte : le parchemin de la session « Extension », au cadre exact (moitié de l'image de correspondance)
+    # la minicarte : le parchemin de minicarte_parchemin.py, au cadre exact (moitié de l'image de correspondance)
     par = Image.open(PARCHEMIN).convert("RGBA")
     if par.size != (LW // 2, LH // 2):
         par = par.resize((LW // 2, LH // 2), Image.LANCZOS)

@@ -38,7 +38,9 @@ def main():
     c = c * (1 - 0.35 * (cor[..., None] / 255.0)) + np.array((200, 40, 160)) * 0.35 * (cor[..., None] / 255.0)
     img = np.clip(c, 0, 255).astype(np.uint8)
     H, W = img.shape[:2]
-    y0 = int(H * (825 - 250 - 40) / 825)                       # un peu de la Saison, le voile, tout le sud
+    # un peu de la Saison, les Voûtes, le voile, tout le sud (3.10.2026 : grille de 905 rangées, cadre_expanded.py)
+    from cadre_expanded import H as HG, DY
+    y0 = int(H * (HG - DY - 40) / HG)
     sud = img[y0:, :]
     sortie = os.path.join(ICI, "captures-article", "10-bois-reveur.jpg")
     Image.fromarray(cv2.resize(sud, (sud.shape[1] // 2, sud.shape[0] // 2), interpolation=cv2.INTER_AREA)).save(

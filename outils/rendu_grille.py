@@ -15,7 +15,8 @@ ICI = os.path.join(ATELIER, r"04-projets\saison-expanded")
 CAIME = os.path.join(ATELIER, r"01-outils\CampaignMapToolkit\CAIME\bin\Debug\CAIME.exe")
 CARTE = os.path.join(ICI, r"caime\saison_expanded_map\map.hex")
 C = os.path.join(ICI, "couches-expanded")
-W, H = 560, 825
+# (3.10.2026 : 560 × 905, la Saison en (x + 120, y + 330), les Voûtes dessous ; cadre_expanded.py)
+from cadre_expanded import W, H, DX, DY, SW, SH, SUD                         # noqa: E402
 COULEURS = {"grassland": (138, 170, 96), "plains": (160, 176, 104), "hills": (150, 140, 96), "light_forest": (86, 128, 70),
             "dense_forest": (44, 86, 44), "hilly_light_forest": (96, 120, 72), "mountain": (128, 120, 112), "marsh": (96, 116, 94),
             "swamp": (84, 100, 80), "tundra": (190, 196, 200), "wasteland": (150, 130, 110), "chaotic_wasteland": (110, 70, 70),
@@ -47,13 +48,14 @@ def main():
     im = Image.fromarray(img)
     d = ImageDraw.Draw(im)
     f = ImageFont.truetype("georgia.ttf", 30)
-    x0, x1 = 120 * S, 520 * S
-    y0, y1 = (H - 690) * S, (H - 250) * S
+    x0, x1 = DX * S, (DX + SW) * S
+    y0, y1 = (H - DY - SH) * S, (H - DY) * S
     d.rectangle((x0, y0, x1, y1), outline=(240, 200, 60), width=4)
     d.text((x0 + 10, y0 + 8), "La Saison (WH1), jouable", font=f, fill=(250, 215, 90), stroke_width=2, stroke_fill=(0, 0, 0))
-    d.text((20, (H - 125) * S), "Réservé au Bois des Rêves (reflet d'Athel Loren, en miroir)", font=f,
+    d.text((20, (H - SUD // 2) * S), "Le Bois Rêveur (reflet d'Athel Loren, en miroir)", font=f,
            fill=(200, 200, 210), stroke_width=2, stroke_fill=(0, 0, 0))
-    sortie = os.path.join(ICI, "captures-article", "04_grille_caime_560x825.jpg")
+    d.text((x0 + 10, (H - DY + 30) * S), "Les Voûtes", font=f, fill=(250, 215, 90), stroke_width=2, stroke_fill=(0, 0, 0))
+    sortie = os.path.join(ICI, "captures-article", f"04_grille_caime_{W}x{H}.jpg")
     im.save(sortie, quality=90)
     print(im.size, sortie)
 

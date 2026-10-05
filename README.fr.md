@@ -19,12 +19,12 @@ chantier est **construit en public** : chaque étape est dans le [journal](docs/
 
 | | |
 |---|---|
-| **Grille** | 560 × 825 hex. La carte de Warhammer I est placée en (+120, +250), un décalage pair comme CAIME l'exige. |
-| **Au centre** | Le terrain de Warhammer I gardé (relief, objets, arbres, eaux) ; les provinces et trois raccords de côte suivent l'Atlas. Elle reste la zone jouable pour l'instant. |
+| **Grille** | 560 × 905 hex. La carte de Warhammer I est placée en (+120, +330), un décalage pair comme CAIME l'exige. |
+| **Au centre** | Le terrain de Warhammer I gardé (relief, objets, arbres, eaux) ; les provinces et trois raccords de côte suivent l'Atlas. La zone jouable couvre maintenant toute la carte : 131 colonies sur une seule terre franchissable. |
 | **Autour** | La terre de l'Atlas : relief modelé depuis ses altitudes, sols, forêts, rivières et côtes, raccordés en douceur au relief de Warhammer I. |
 | **Le Bois Rêveur** | Le reflet d'Athel Loren en miroir, dans une mer d'éther, au sud de la forêt. |
 | **Clés** | Carte `saison_expanded_map`, campagne `saison_expanded`, régions neuves `saison_…` ; jamais les clés de la bêta. |
-| **État** | En chantier, pas encore jouable : grille, régions, villes et minicarte faites ; terrain de l'extension en cours (relief, rivières, Bois Rêveur). Voir le [PLAN](docs/fr/PLAN.md). Les collaborations sont ouvertes : issues, pull requests, et le Discord indiqué par [bretonia.dev](https://bretonia.dev). |
+| **État** | En chantier, version d'essai seulement : la campagne se charge en jeu et passe son premier tour. Grille, régions, villes, factions, positions de départ et terrain sont faits ; pas encore de scripts de campagne, et les côtes, falaises et embouchures sont encore en finition (les fleuves navigables suivent). Voir le [PLAN](docs/fr/PLAN.md). Les collaborations sont ouvertes : issues, pull requests, et le Discord indiqué par [bretonia.dev](https://bretonia.dev). |
 
 <p align="center"><img src="docs/art/divider.svg" width="100%" alt=""></p>
 
